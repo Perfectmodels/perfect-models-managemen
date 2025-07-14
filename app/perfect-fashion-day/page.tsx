@@ -25,7 +25,7 @@ export default function PerfectFashionDayPage() {
       <section className="py-24 bg-gradient-to-br from-amber-50 to-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="mb-6 bg-amber-100 text-amber-800 border-amber-200">Perfect Fashion Day</Badge>
+            <div className="mb-6 bg-amber-100 text-amber-800 border-amber-200 inline-block rounded px-2 py-1 text-xs font-semibold">Perfect Fashion Day</div>
             <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
               Perfect Fashion <span className="text-amber-500">Day</span>
             </h1>
@@ -41,9 +41,7 @@ export default function PerfectFashionDayPage() {
       <section className="py-24 bg-gradient-to-r from-purple-50 to-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="mb-6 bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 text-lg px-6 py-2">
-              🎉 DEUXIÈME ÉDITION À VENIR
-            </Badge>
+            <div className="mb-6 bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 text-lg px-6 py-2 inline-block rounded font-semibold">🎉 DEUXIÈME ÉDITION À VENIR</div>
             <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
               Perfect Fashion Day <span className="text-purple-500">2026</span>
             </h2>
@@ -202,7 +200,7 @@ export default function PerfectFashionDayPage() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="mb-6 bg-amber-100 text-amber-800 border-amber-200">Retour sur 2025</Badge>
+            <div className="mb-6 bg-amber-100 text-amber-800 border-amber-200 inline-block rounded px-2 py-1 text-xs font-semibold">Retour sur 2025</div>
             <h2 className="text-4xl font-bold text-black mb-6">
               Première Édition <span className="text-amber-500">Réussie</span>
             </h2>
@@ -213,9 +211,7 @@ export default function PerfectFashionDayPage() {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
             <div>
-              <Badge className="mb-6 bg-gradient-to-r from-amber-500 to-amber-600 text-white border-0">
-                25 Janvier 2025 • La Gare du Nord
-              </Badge>
+              <div className="mb-6 bg-gradient-to-r from-amber-500 to-amber-600 text-white border-0 inline-block rounded px-2 py-1 text-xs font-semibold">25 Janvier 2025 • La Gare du Nord</div>
               <h3 className="text-3xl font-bold text-black mb-6 leading-tight">
                 Perfect Fashion Day <span className="text-amber-500">Racines & Modernité</span>
               </h3>
@@ -241,8 +237,8 @@ export default function PerfectFashionDayPage() {
 
             <div className="relative">
               <Image
-                src="/affiche.jpg"
-                alt="Perfect Fashion Day 2025"
+                src="/Affiche.png"
+                alt="Affiche Perfect Fashion Day 2025"
                 width={600}
                 height={500}
                 className="rounded-lg object-cover shadow-lg"
@@ -257,7 +253,7 @@ export default function PerfectFashionDayPage() {
           {/* Stylistes avec Carrousels */}
           <div className="mb-24">
             <div className="text-center mb-12">
-              <Badge className="mb-6 bg-amber-100 text-amber-800 border-amber-200">Ordre de Passage 2025</Badge>
+              <div className="mb-6 bg-amber-100 text-amber-800 border-amber-200 inline-block rounded px-2 py-1 text-xs font-semibold">Ordre de Passage 2025</div>
               <h3 className="text-3xl font-bold text-black mb-4">
                 Les <span className="text-amber-500">Créateurs</span> à l'Honneur
               </h3>
@@ -283,11 +279,23 @@ export default function PerfectFashionDayPage() {
                 {/* Carrousel AG Style */}
                 <div className="relative">
                   <div className="flex space-x-4 overflow-x-auto pb-4">
-                    {[1, 2, 3, 4, 5].map((i) => (
+                    {[
+                      "agstyle (7).jpg",
+                      "agstyle (13).jpg",
+                      "agstyle (15).jpg",
+                      "agstyle (17).jpg",
+                      "agstyle (21).jpg",
+                      "agstyle (23).jpg",
+                      "agstyle (28).jpg",
+                      "agstyle (33).jpg",
+                      "agstyle (36).jpg",
+                      "agstyle (41).jpg",
+                      "agstyle (42).jpg",
+                    ].map((file, i) => (
                       <div key={i} className="flex-shrink-0">
                         <Image
-                          src={`/placeholder.svg?height=300&width=250&text=AG+Style+${i}`}
-                          alt={`AG Style ${i}`}
+                          src={`/${file}`}
+                          alt={`AG Style ${i + 1}`}
                           width={250}
                           height={300}
                           className="rounded-lg object-cover shadow-md hover:shadow-lg transition-shadow"
@@ -317,11 +325,22 @@ export default function PerfectFashionDayPage() {
                 {/* Carrousel Farel MD */}
                 <div className="relative">
                   <div className="flex space-x-4 overflow-x-auto pb-4">
-                    {[1, 2, 3, 4].map((i) => (
+                    {[
+                      "farelmd (5).jpg",
+                      "farelmd (10).jpg",
+                      "farelmd (16).jpg",
+                      "farelmd (21).jpg",
+                      "farelmd (26).jpg",
+                      "farelmd (28).jpg",
+                      "farelmd (30).jpg",
+                      "farelmd (31).jpg",
+                      "farelmd (33).jpg",
+                      "farelmd (37).jpg",
+                    ].map((file, i) => (
                       <div key={i} className="flex-shrink-0">
                         <Image
-                          src={`/placeholder.svg?height=300&width=250&text=Farel+MD+${i}`}
-                          alt={`Farel MD ${i}`}
+                          src={`/${file}`}
+                          alt={`Farel MD ${i + 1}`}
                           width={250}
                           height={300}
                           className="rounded-lg object-cover shadow-md hover:shadow-lg transition-shadow"
@@ -351,11 +370,22 @@ export default function PerfectFashionDayPage() {
                 {/* Carrousel VENTEX Custom */}
                 <div className="relative">
                   <div className="flex space-x-4 overflow-x-auto pb-4">
-                    {[1, 2, 3, 4, 5].map((i) => (
+                    {[
+                      "ventex (4).jpg",
+                      "ventex (7).jpg",
+                      "ventex (14).jpg",
+                      "ventex (18).jpg",
+                      "ventex (21).jpg",
+                      "ventex (28).jpg",
+                      "ventex (31).jpg",
+                      "ventex (36).jpg",
+                      "ventex (43).jpg",
+                      "ventex (44).jpg",
+                    ].map((file, i) => (
                       <div key={i} className="flex-shrink-0">
                         <Image
-                          src={`/placeholder.svg?height=300&width=250&text=VENTEX+${i}`}
-                          alt={`VENTEX Custom ${i}`}
+                          src={`/${file}`}
+                          alt={`VENTEX Custom ${i + 1}`}
                           width={250}
                           height={300}
                           className="rounded-lg object-cover shadow-md hover:shadow-lg transition-shadow"
@@ -385,11 +415,21 @@ export default function PerfectFashionDayPage() {
                 {/* Carrousel Miguel Fashion Style */}
                 <div className="relative">
                   <div className="flex space-x-4 overflow-x-auto pb-4">
-                    {[1, 2, 3, 4].map((i) => (
+                    {[
+                      "miguel (6).jpg",
+                      "miguel (10).jpg",
+                      "miguel (12).jpg",
+                      "miguel (13).jpg",
+                      "miguel (19).jpg",
+                      "miguel (21).jpg",
+                      "miguel (23).jpg",
+                      "miguel (24).jpg",
+                      "miguel (25).jpg",
+                    ].map((file, i) => (
                       <div key={i} className="flex-shrink-0">
                         <Image
-                          src={`/placeholder.svg?height=300&width=250&text=Miguel+${i}`}
-                          alt={`Miguel Fashion Style ${i}`}
+                          src={`/${file}`}
+                          alt={`Miguel Fashion Style ${i + 1}`}
                           width={250}
                           height={300}
                           className="rounded-lg object-cover shadow-md hover:shadow-lg transition-shadow"
@@ -419,11 +459,19 @@ export default function PerfectFashionDayPage() {
                 {/* Carrousel Faran */}
                 <div className="relative">
                   <div className="flex space-x-4 overflow-x-auto pb-4">
-                    {[1, 2, 3, 4, 5, 6].map((i) => (
+                    {[
+                      "faran (7).jpg",
+                      "faran (18).jpg",
+                      "faran (31).jpg",
+                      "faran (45).jpg",
+                      "faran (62).jpg",
+                      "faran (63).jpg",
+                      "faran (72).jpg",
+                    ].map((file, i) => (
                       <div key={i} className="flex-shrink-0">
                         <Image
-                          src={`/placeholder.svg?height=300&width=250&text=Faran+Miss+${i}`}
-                          alt={`Faran Miss ${i}`}
+                          src={`/${file}`}
+                          alt={`Faran ${i + 1}`}
                           width={250}
                           height={300}
                           className="rounded-lg object-cover shadow-md hover:shadow-lg transition-shadow"
@@ -453,11 +501,20 @@ export default function PerfectFashionDayPage() {
                 {/* Carrousel Madame Luc / Abiale */}
                 <div className="relative">
                   <div className="flex space-x-4 overflow-x-auto pb-4">
-                    {[1, 2, 3, 4].map((i) => (
+                    {[
+                      "madame Luc.jpg",
+                      "madameluc (1).jpg",
+                      "madameluc (4).jpg",
+                      "madameluc (10).jpg",
+                      "madameluc (14).jpg",
+                      "madameluc (23).jpg",
+                      "madameluc (27).jpg",
+                      "madameluc (35).jpg",
+                    ].map((file, i) => (
                       <div key={i} className="flex-shrink-0">
                         <Image
-                          src={`/placeholder.svg?height=300&width=250&text=Abiale+${i}`}
-                          alt={`Abiale ${i}`}
+                          src={`/${file}`}
+                          alt={`Madame Luc / Abiale ${i + 1}`}
                           width={250}
                           height={300}
                           className="rounded-lg object-cover shadow-md hover:shadow-lg transition-shadow"
@@ -487,11 +544,26 @@ export default function PerfectFashionDayPage() {
                 {/* Carrousel Brand'O */}
                 <div className="relative">
                   <div className="flex space-x-4 overflow-x-auto pb-4">
-                    {[1, 2, 3, 4, 5].map((i) => (
+                    {[
+                      "brando.jpg",
+                      "brando (10).jpg",
+                      "brando (11).jpg",
+                      "brando (13).jpg",
+                      "brando (17).jpg",
+                      "brando (22).jpg",
+                      "brando (24).jpg",
+                      "brando (25).jpg",
+                      "brando (26).jpg",
+                      "brando (28).jpg",
+                      "brando (34).jpg",
+                      "brando (39).jpg",
+                      "brando (45).jpg",
+                      "brando (50).jpg",
+                    ].map((file, i) => (
                       <div key={i} className="flex-shrink-0">
                         <Image
-                          src={`/placeholder.svg?height=300&width=250&text=Brand'O+${i}`}
-                          alt={`Brand'O ${i}`}
+                          src={`/${file}`}
+                          alt={`Brand'O ${i + 1}`}
                           width={250}
                           height={300}
                           className="rounded-lg object-cover shadow-md hover:shadow-lg transition-shadow"
@@ -521,11 +593,25 @@ export default function PerfectFashionDayPage() {
                 {/* Carrousel Tito Style */}
                 <div className="relative">
                   <div className="flex space-x-4 overflow-x-auto pb-4">
-                    {[1, 2, 3, 4, 5].map((i) => (
+                    {[
+                      "titostyle (4).jpg",
+                      "titostyle (12).jpg",
+                      "titostyle (17).jpg",
+                      "titostyle (19).jpg",
+                      "titostyle (25).jpg",
+                      "titostyle (33).jpg",
+                      "titostyle (36).jpg",
+                      "titostyle (41).jpg",
+                      "titostyle (43).jpg",
+                      "titostyle (45).jpg",
+                      "titostyle (50).jpg",
+                      "titostyle (51).jpg",
+                      "titostyle (53).jpg",
+                    ].map((file, i) => (
                       <div key={i} className="flex-shrink-0">
                         <Image
-                          src={`/placeholder.svg?height=300&width=250&text=Tito+Style+${i}`}
-                          alt={`Tito Style ${i}`}
+                          src={`/${file}`}
+                          alt={`Tito Style ${i + 1}`}
                           width={250}
                           height={300}
                           className="rounded-lg object-cover shadow-md hover:shadow-lg transition-shadow"
@@ -555,11 +641,19 @@ export default function PerfectFashionDayPage() {
                 {/* Carrousel Edele A */}
                 <div className="relative">
                   <div className="flex space-x-4 overflow-x-auto pb-4">
-                    {[1, 2, 3, 4, 5, 6].map((i) => (
+                    {[
+                      "edelea (3).jpg",
+                      "edelea (16).jpg",
+                      "edelea (22).jpg",
+                      "edelea (24).jpg",
+                      "edelea (31).jpg",
+                      "edelea (38).jpg",
+                      "edelea (40).jpg",
+                    ].map((file, i) => (
                       <div key={i} className="flex-shrink-0">
                         <Image
-                          src={`/placeholder.svg?height=300&width=250&text=Edele+A+${i}`}
-                          alt={`Edele A ${i}`}
+                          src={`/${file}`}
+                          alt={`Edele A ${i + 1}`}
                           width={250}
                           height={300}
                           className="rounded-lg object-cover shadow-md hover:shadow-lg transition-shadow"
@@ -575,7 +669,7 @@ export default function PerfectFashionDayPage() {
           {/* Mannequins Vedettes */}
           <div className="mb-24">
             <div className="text-center mb-12">
-              <Badge className="mb-6 bg-rose-100 text-rose-800 border-rose-200">Perfect Models Squad 2025</Badge>
+              <div className="mb-6 bg-rose-100 text-rose-800 border-rose-200 inline-block rounded px-2 py-1 text-xs font-semibold">Perfect Models Squad 2025</div>
               <h3 className="text-3xl font-bold text-black mb-4">
                 Nos <span className="text-amber-500">Mannequins</span> Vedettes
               </h3>
@@ -610,7 +704,7 @@ export default function PerfectFashionDayPage() {
           {/* Partenaires */}
           <div className="bg-gradient-to-r from-amber-50 to-amber-100 rounded-lg p-8 mb-24">
             <div className="text-center mb-8">
-              <Badge className="mb-4 bg-amber-500 text-white border-0">Partenaires Officiels 2025</Badge>
+              <div className="mb-4 bg-amber-500 text-white border-0 inline-block rounded px-2 py-1 text-xs font-semibold">Partenaires Officiels 2025</div>
               <h3 className="text-2xl font-bold text-black">
                 Nos <span className="text-amber-600">Collaborateurs</span>
               </h3>

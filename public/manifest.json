@@ -1,0 +1,21 @@
+{
+  "name": "Perfect Model Management",
+  "short_name": "PMM",
+  "description": "Agence de mannequins - Perfect Model Management Gabon",
+  "icons": [
+    {
+      "src": "/logo-pmm.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo-pmm.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#000"
+} 

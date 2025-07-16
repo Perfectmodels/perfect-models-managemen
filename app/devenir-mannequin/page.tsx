@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { ArrowRight, Upload, CheckCircle, Star, Users } from "lucide-react"
 import Link from "next/link";
+import { useState } from "react";
 
 export default function DevenirMannequinPage() {
   const requirements = [
@@ -41,6 +42,37 @@ export default function DevenirMannequinPage() {
       description: "Bienvenue dans la famille Perfect Models",
     },
   ]
+
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError(null);
+    setLoading(true);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    try {
+      const res = await fetch("/api/evaluation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) {
+        const err = await res.json();
+        setError(err.error || "Erreur lors de l'envoi. Veuillez réessayer plus tard.");
+        setLoading(false);
+        return;
+      }
+      setSubmitted(true);
+    } catch (e) {
+      setError("Erreur réseau ou serveur. Veuillez réessayer plus tard.");
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <div className="min-h-screen bg-white pt-20">
@@ -151,41 +183,36 @@ export default function DevenirMannequinPage() {
           </div>
 
           <Card className="p-8 border-0 shadow-lg">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              {error && <div className="bg-red-100 text-red-700 p-3 rounded mb-4 text-sm">{error}</div>}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Prénom *</label>
-                  <Input placeholder="Votre prénom" required />
+                  <Input name="prenom" placeholder="Votre prénom" required />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Nom *</label>
-                  <Input placeholder="Votre nom" required />
+                  <Input name="nom" placeholder="Votre nom" required />
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Email *</label>
-                  <Input type="email" placeholder="votre@email.com" required />
+                  <Input name="email" type="email" placeholder="votre@email.com" required />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Téléphone *</label>
-                  <Input type="tel" placeholder="+241 XX XX XX XX" required />
+                  <Input name="telephone" type="tel" placeholder="+241 XX XX XX XX" required />
                 </div>
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Âge *</label>
-                  <Input type="number" placeholder="25" required />
+                  <Input name="age" type="number" placeholder="25" required />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Taille (cm) *</label>
-                  <Input type="number" placeholder="175" required />
+                  <Input name="taille" type="number" placeholder="175" required />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">Genre *</label>
                   <select
+                    name="genre"
                     className="w-full p-3 border border-neutral-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                     required
                   >
@@ -199,6 +226,7 @@ export default function DevenirMannequinPage() {
               <div>
                 <label className="block text-sm font-medium text-neutral-700 mb-2">Expérience</label>
                 <textarea
+                  name="experience"
                   className="w-full p-3 border border-neutral-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   rows={3}
                   placeholder="Décrivez votre expérience dans le mannequinat (débutant accepté)"
@@ -213,14 +241,12 @@ export default function DevenirMannequinPage() {
                   <p className="text-sm text-neutral-500">
                     Minimum 3 photos : portrait, pied en cap, profil (JPG, PNG max 5MB chacune)
                   </p>
-                  <Button variant="outline" className="mt-4 bg-transparent">
-                    Choisir les fichiers
-                  </Button>
+                  <input name="photos" type="file" accept="image/*" multiple required className="mt-4" />
                 </div>
               </div>
 
               <div className="flex items-start space-x-3">
-                <input type="checkbox" className="mt-1" required />
+                <input name="cgu" type="checkbox" className="mt-1" required />
                 <p className="text-sm text-neutral-600">
                   J'accepte les{" "}
                   <a href="#" className="text-amber-600 hover:underline">
@@ -234,11 +260,17 @@ export default function DevenirMannequinPage() {
                 </p>
               </div>
 
-              <Button className="w-full bg-black hover:bg-neutral-800 text-white py-4 text-lg">
-                Envoyer ma Candidature
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Button className="w-full bg-black hover:bg-neutral-800 text-white py-4 text-lg" disabled={loading}>
+                {loading ? "Envoi en cours..." : (<><span>Envoyer ma Candidature</span><ArrowRight className="ml-2 h-5 w-5" /></>)}
               </Button>
             </form>
+           {submitted && (
+             <div className="text-center py-16">
+               <h2 className="text-2xl font-bold text-amber-600 mb-4">Merci !</h2>
+               <p className="text-lg text-neutral-700 mb-4">Votre candidature a bien été envoyée.</p>
+               <p className="text-neutral-500">Notre équipe vous contactera sous 48h pour un retour personnalisé.</p>
+             </div>
+           )}
           </Card>
         </div>
       </section>

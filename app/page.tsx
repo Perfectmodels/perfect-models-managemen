@@ -4,55 +4,13 @@ import { Card } from "@/components/ui/card"
 import { ArrowRight, Star, Users, Award, Calendar } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import Hero from "@/components/Hero"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30 z-10"></div>
-        <Image
-          src="/placeholder.svg?height=1080&width=1920"
-          alt="Hero Background"
-          fill
-          className="object-cover"
-          priority
-        />
-
-        <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
-          <Badge className="mb-6 bg-amber-500/20 text-amber-200 border-amber-400/30">
-            Agence Internationale de Mannequins
-          </Badge>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            L'excellence a un <span className="text-amber-400">visage</span>
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-neutral-200 font-light">L'élégance au service de la perfection</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/mannequins">
-              <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-4">
-                Découvrir nos Mannequins
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link href="/devenir-mannequin">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-black px-8 py-4 bg-transparent"
-              >
-                Nous Rejoindre
-              </Button>
-            </Link>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce"></div>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* Quick Stats */}
       <section className="py-20 bg-neutral-50">

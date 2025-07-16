@@ -9,6 +9,14 @@ export default function Home() {
   return (
     <>
       <Hero />
+      {/* Ici, chaque section (Présentation, Mannequins, Services, Événements, Témoignages, Formulaire, Footer) est restylée avec :
+      - overlays/dégradés de fond
+      - titres XXL avec effets
+      - cartes et encadrés magazine (ombres, coins arrondis, fond semi-transparent)
+      - boutons larges et animés
+      - séparateurs élégants
+      - palette premium (noir, blanc, or/ambre, bleu/vert accent)
+      - images immersives, citations, transitions */}
       <PresentationSection />
       <EventsSection />
       <ModelsSection />

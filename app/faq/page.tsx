@@ -29,16 +29,18 @@ const faqs = [
 
 export default function FAQPage() {
   return (
-    <div className="max-w-3xl mx-auto py-24 px-4">
-      <h1 className="text-4xl font-bold mb-6 text-amber-700">FAQ – Foire Aux Questions</h1>
-      <div className="space-y-8">
-        {faqs.map((faq, idx) => (
-          <div key={idx}>
-            <h2 className="text-xl font-semibold mb-2 text-black">{faq.question}</h2>
-            <p className="text-neutral-700 text-lg">{faq.answer}</p>
-          </div>
-        ))}
+    <section className="relative min-h-screen py-32 bg-gradient-to-br from-black via-neutral-900 to-amber-900/80 text-white overflow-hidden">
+      <div className="max-w-3xl mx-auto px-4">
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-10 drop-shadow-xl text-amber-300 uppercase tracking-wide text-center">FAQ – Foire Aux Questions</h1>
+        <div className="space-y-10">
+          {faqs.map((faq, idx) => (
+            <div key={idx} className="bg-white/10 rounded-3xl shadow-2xl p-8 backdrop-blur-md border border-amber-200">
+              <h2 className="text-2xl font-bold mb-2 text-amber-100 drop-shadow uppercase tracking-wide">{faq.question}</h2>
+              <p className="text-amber-200 text-lg font-serif italic">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 } 

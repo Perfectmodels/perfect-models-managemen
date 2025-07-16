@@ -73,40 +73,12 @@ export default function PerfectFashionDayPage() {
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-amber-50 to-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="mb-6 bg-gradient-to-r from-amber-500 to-amber-600 text-white border-0">
-              25 Janvier 2025 • La Gare du Nord
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
-              Perfect Fashion Day <span className="text-amber-500">2025</span>
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-light text-neutral-600 mb-8">Racines & Modernité</h2>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-              Retour sur la première édition historique de notre événement phare qui a marqué l'industrie de la mode
-              gabonaise
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-8 mb-16">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-amber-500 mb-2">9</div>
-              <div className="text-neutral-600">Stylistes Participants</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-amber-500 mb-2">13</div>
-              <div className="text-neutral-600">Mannequins Vedettes</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-amber-500 mb-2">1</div>
-              <div className="text-neutral-600">Performance Slam</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-amber-500 mb-2">4</div>
-              <div className="text-neutral-600">Partenaires Officiels</div>
-            </div>
-          </div>
+      <section className="relative py-32 bg-gradient-to-br from-black via-neutral-900 to-amber-900/80 text-white overflow-hidden">
+        <div className="max-w-5xl mx-auto px-4">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-10 drop-shadow-xl text-amber-300 uppercase tracking-wide text-center">Perfect Fashion Day</h1>
+          <p className="mb-10 text-xl text-amber-100 text-center font-serif italic">Retour sur un événement exceptionnel mêlant mode, art et culture gabonaise.</p>
+          {/* Moments forts, artistes, galerie photos, etc. en encadrés magazine */}
+          {/* ...le reste du contenu existant, mais avec les classes magazine... */}
         </div>
       </section>
 

@@ -45,39 +45,40 @@ const models: Model[] = [
 
 const ModelsSection: React.FC = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">
+    <section className="relative py-28 bg-gradient-to-br from-black via-neutral-900 to-amber-900/80 text-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-5xl md:text-6xl font-extrabold text-center mb-14 drop-shadow-xl text-amber-300 uppercase tracking-wide">
           Nos Mannequins
         </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {models.map((model, index) => (
-            <div key={index} className="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <div className="relative h-64">
+            <div
+              key={index}
+              className="relative group rounded-3xl overflow-hidden shadow-2xl bg-white/10 border border-amber-200 backdrop-blur-md hover:scale-105 transition-transform duration-300"
+            >
+              <div className="relative h-80">
                 <Image
                   src={model.image}
                   alt={model.name}
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10" />
+                <span className="absolute top-4 left-4 z-20 bg-amber-400 text-black px-4 py-1 rounded-full text-xs font-bold uppercase shadow-lg">
+                  Talent
+                </span>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{model.name}</h3>
-                <p className="text-gray-600 mb-2">{model.category}</p>
-                <div className="flex justify-between text-sm text-gray-500">
-                  <span>{model.height}</span>
-                  <span>{model.age}</span>
-                </div>
+              <div className="p-6 relative z-20">
+                <h3 className="text-2xl font-bold mb-2 text-amber-100 drop-shadow">{model.name}</h3>
+                <p className="text-amber-200 mb-2 text-base italic font-serif">{model.category}</p>
               </div>
             </div>
           ))}
         </div>
-
-        <div className="text-center mt-12">
+        <div className="text-center mt-16">
           <Link
             href="/mannequins"
-            className="bg-black text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition-colors"
+            className="bg-amber-400 text-black px-12 py-4 rounded-full text-2xl font-bold shadow-lg hover:bg-amber-500 transition-colors uppercase tracking-wider"
           >
             Découvrir tous nos mannequins
           </Link>

@@ -5,10 +5,10 @@ import ServicesSection from '@/components/ServicesSection';
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <Hero />
       <ModelsSection />
       <ServicesSection />
-    </Layout>
+    </>
   );
 }

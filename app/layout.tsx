@@ -30,85 +30,22 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
-        <footer className="bg-black text-white py-12">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {/* Logo et info */}
-              <div>
-                <p className="text-gray-400">
-                  Agence de mannequins professionnelle spécialisée dans la mode et la publicité.
-                </p>
-                <div className="mt-4 space-x-4">
-                  <a href="#" className="text-gray-400 hover:text-white">
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                    </svg>
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-white">
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.017-.609 1.798-1.574 2.165-2.724-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.445 3.379 4.605 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                    </svg>
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-white">
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C6.477 2 2 6.484 2 12.001c0 4.418 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0024 12.001C24 6.484 19.522 2 12 2z" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-
-              {/* Navigation */}
-              <div>
-                <h3 className="text-lg font-semibold mb-4">Navigation</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <a href="/mannequins" className="text-gray-400 hover:text-white">Mannequins</a>
-                  </li>
-                  <li>
-                    <a href="/services" className="text-gray-400 hover:text-white">Services</a>
-                  </li>
-                  <li>
-                    <a href="/events" className="text-gray-400 hover:text-white">Événements</a>
-                  </li>
-                  <li>
-                    <a href="/about" className="text-gray-400 hover:text-white">À propos</a>
-                  </li>
-                  <li>
-                    <a href="/contact" className="text-gray-400 hover:text-white">Contact</a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Contact */}
-              <div>
-                <h3 className="text-lg font-semibold mb-4">Contact</h3>
-                <p className="text-gray-400 mb-2">Email: perfectmodels.ga@gmail.com</p>
-                <p className="text-gray-400 mb-2">Téléphone: +241 77 50 79 50</p>
-                <p className="text-gray-400">Libreville, Gabon</p>
-                <p className="text-gray-400 mt-2">Facebook / Instagram : Perfectmodels.Ga</p>
-              </div>
-
-              {/* Newsletter */}
-              <div>
-                <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
-                <p className="text-gray-400 mb-4">Rejoignez notre communauté</p>
-                <form className="flex flex-col space-y-2">
-                  <input
-                    type="email"
-                    placeholder="Votre email"
-                    className="bg-gray-800 text-white px-4 py-2 rounded"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 transition-colors"
-                  >
-                    S'abonner
-                  </button>
-                </form>
-              </div>
-            </div>
-            <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
-              <p>&copy; {new Date().getFullYear()} Perfect Models Management. Tous droits réservés.</p>
+        <footer className="w-full bg-neutral-900 text-white py-8 mt-24">
+          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-lg font-bold">Perfect Models Management © {new Date().getFullYear()}</div>
+            <div className="flex space-x-6">
+              <a href="https://www.facebook.com/perfectmodels.ga" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
+              </a>
+              <a href="https://www.instagram.com/perfectmodels.ga/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.782 2.225 7.148 2.163 8.414 2.105 8.794 2.094 12 2.094zm0-2.163C8.741 0 8.332.012 7.052.07 5.771.128 4.659.334 3.608 1.385 2.557 2.436 2.351 3.548 2.293 4.829 2.235 6.109 2.223 6.519 2.223 12c0 5.481.012 5.891.07 7.171.058 1.281.264 2.393 1.315 3.444 1.051 1.051 2.163 1.257 3.444 1.315 1.28.058 1.69.07 7.171.07s5.891-.012 7.171-.07c1.281-.058 2.393-.264 3.444-1.315 1.051-1.051 1.257-2.163 1.315-3.444.058-1.28.07-1.69.07-7.171s-.012-5.891-.07-7.171c-.058-1.281-.264-2.393-1.315-3.444C19.393.334 18.281.128 17.001.07 15.721.012 15.311 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm7.2-10.406a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+              </a>
+              <a href="https://www.tiktok.com/@perfectmodels.ga" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.004 2.002c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.477-10-10-10zm3.5 7.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm-7 0c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm3.5 7.5c-2.485 0-4.5-2.015-4.5-4.5s2.015-4.5 4.5-4.5 4.5 2.015 4.5 4.5-2.015 4.5-4.5 4.5zm0-8c-1.933 0-3.5 1.567-3.5 3.5s1.567 3.5 3.5 3.5 3.5-1.567 3.5-3.5-1.567-3.5-3.5-3.5z"/></svg>
+              </a>
+              <a href="https://www.youtube.com/channel/UCNICmN3GVzZFb6gsD3-efSQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.112-2.112C19.425 3.5 12 3.5 12 3.5s-7.425 0-9.386.574A2.994 2.994 0 0 0 .502 6.186C0 8.147 0 12 0 12s0 3.853.502 5.814a2.994 2.994 0 0 0 2.112 2.112C4.575 20.5 12 20.5 12 20.5s7.425 0 9.386-.574a2.994 2.994 0 0 0 2.112-2.112C24 15.853 24 12 24 12s0-3.853-.502-5.814zM9.545 15.568V8.432l6.545 3.568-6.545 3.568z"/></svg>
+              </a>
             </div>
           </div>
         </footer>

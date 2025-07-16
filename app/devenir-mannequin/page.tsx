@@ -259,6 +259,13 @@ export default function DevenirMannequinPage() {
                     </div>
                   </div>
                 </div>
+                {/* Conditions d'utilisation et politique de confidentialité */}
+                <div className="flex items-start space-x-3 mt-6">
+                  <input name="cgu" type="checkbox" className="mt-1" required />
+                  <p className="text-sm text-neutral-600">
+                    J'accepte les <a href="/conditions" className="text-amber-600 hover:underline" target="_blank">conditions d'utilisation</a> et la <a href="/confidentialite" className="text-amber-600 hover:underline" target="_blank">politique de confidentialité</a> *
+                  </p>
+                </div>
                 <Button className="w-full bg-black hover:bg-neutral-800 text-white py-4 text-lg" disabled={loading}>
                   {loading ? "Envoi en cours..." : (<><span>Envoyer ma Candidature</span></>)}
                 </Button>

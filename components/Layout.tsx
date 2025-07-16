@@ -13,45 +13,45 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center">
               <Image
                 src="/logo-pmm.png"
                 alt="Perfect Models Management"
-                width={150}
-                height={60}
+                width={120}
+                height={40}
                 className="cursor-pointer hover:scale-105 transition-transform duration-200"
               />
             </Link>
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden md:flex items-center space-x-8">
               <Link
                 href="/mannequins"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
               >
                 Mannequins
               </Link>
               <Link
                 href="/services"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
               >
                 Services
               </Link>
               <Link
                 href="/events"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
               >
                 Événements
               </Link>
               <Link
                 href="/about"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
               >
                 À propos
               </Link>
               <Link
                 href="/contact"
-                className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition-colors"
+                className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition-colors font-medium"
               >
                 Contact
               </Link>
@@ -74,13 +74,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Logo et info */}
             <div>
-              <Image
-                src="/logo-pmm.png"
-                alt="Perfect Models Management"
-                width={150}
-                height={60}
-                className="mb-4"
-              />
               <p className="text-gray-400">
                 Agence de mannequins professionnelle spécialisée dans la mode et la publicité.
               </p>

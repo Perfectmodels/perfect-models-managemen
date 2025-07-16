@@ -36,25 +36,25 @@ export default function Navbar() {
 
           {/* Liens desktop */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-neutral-700 hover:text-black transition-colors font-medium">
+            <Link href="/" className="text-lg text-neutral-700 hover:text-black transition-colors font-semibold">
               Accueil
             </Link>
-            <Link href="/agence" className="text-neutral-700 hover:text-black transition-colors font-medium">
+            <Link href="/agence" className="text-lg text-neutral-700 hover:text-black transition-colors font-semibold">
               Notre Agence
             </Link>
-            <Link href="/mannequins" className="text-neutral-700 hover:text-black transition-colors font-medium">
+            <Link href="/mannequins" className="text-lg text-neutral-700 hover:text-black transition-colors font-semibold">
               Mannequins
             </Link>
-            <Link href="/portfolio" className="text-neutral-700 hover:text-black transition-colors font-medium">
+            <Link href="/portfolio" className="text-lg text-neutral-700 hover:text-black transition-colors font-semibold">
               Portfolio
             </Link>
             <Link
               href="/perfect-fashion-day"
-              className="text-neutral-700 hover:text-black transition-colors font-medium"
+              className="text-lg text-neutral-700 hover:text-black transition-colors font-semibold"
             >
               Perfect Fashion Day
             </Link>
-            <Link href="/contact" className="text-neutral-700 hover:text-black transition-colors font-medium">
+            <Link href="/contact" className="text-lg text-neutral-700 hover:text-black transition-colors font-semibold">
               Contact
             </Link>
           </div>
@@ -78,22 +78,22 @@ export default function Navbar() {
             >
               ✕
             </button>
-            <Link href="/" className="text-neutral-700 hover:text-black font-medium" onClick={() => setOpen(false)}>
+            <Link href="/" className="text-lg text-neutral-700 hover:text-black font-semibold" onClick={() => setOpen(false)}>
               Accueil
             </Link>
-            <Link href="/agence" className="text-neutral-700 hover:text-black font-medium" onClick={() => setOpen(false)}>
+            <Link href="/agence" className="text-lg text-neutral-700 hover:text-black font-semibold" onClick={() => setOpen(false)}>
               Notre Agence
             </Link>
-            <Link href="/mannequins" className="text-neutral-700 hover:text-black font-medium" onClick={() => setOpen(false)}>
+            <Link href="/mannequins" className="text-lg text-neutral-700 hover:text-black font-semibold" onClick={() => setOpen(false)}>
               Mannequins
             </Link>
-            <Link href="/portfolio" className="text-neutral-700 hover:text-black font-medium" onClick={() => setOpen(false)}>
+            <Link href="/portfolio" className="text-lg text-neutral-700 hover:text-black font-semibold" onClick={() => setOpen(false)}>
               Portfolio
             </Link>
-            <Link href="/perfect-fashion-day" className="text-neutral-700 hover:text-black font-medium" onClick={() => setOpen(false)}>
+            <Link href="/perfect-fashion-day" className="text-lg text-neutral-700 hover:text-black font-semibold" onClick={() => setOpen(false)}>
               Perfect Fashion Day
             </Link>
-            <Link href="/contact" className="text-neutral-700 hover:text-black font-medium" onClick={() => setOpen(false)}>
+            <Link href="/contact" className="text-lg text-neutral-700 hover:text-black font-semibold" onClick={() => setOpen(false)}>
               Contact
             </Link>
             <Link href="/devenir-mannequin" onClick={() => setOpen(false)}>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Menu } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -12,13 +13,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">P</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-black">Perfect Models</h1>
-              <p className="text-xs text-neutral-600 -mt-1">Management</p>
-            </div>
+            <Link href="/">
+              <Image
+                src="/logo-pmm.png"
+                alt="Logo Perfect Model Management"
+                width={48}
+                height={48}
+                className="cursor-pointer rounded-full hover:scale-105 transition-transform duration-200"
+                priority
+              />
+            </Link>
           </div>
 
           {/* Menu burger mobile */}

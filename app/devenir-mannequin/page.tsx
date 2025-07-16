@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { ArrowRight, Upload, CheckCircle, Star, Users } from "lucide-react"
+import Link from "next/link";
 
 export default function DevenirMannequinPage() {
   const requirements = [
@@ -93,10 +94,12 @@ export default function DevenirMannequinPage() {
                   <p className="text-neutral-600 mt-2">Découvrez votre potentiel en 5 minutes</p>
                 </div>
 
-                <Button className="w-full bg-black hover:bg-neutral-800 text-white mb-4">
-                  Commencer l'Évaluation
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <Link href="/devenir-mannequin/evaluation" passHref legacyBehavior>
+                  <Button className="w-full bg-black hover:bg-neutral-800 text-white mb-4">
+                    Commencer l'Évaluation
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
 
                 <p className="text-sm text-neutral-500 text-center">
                   100% gratuit • Sans engagement • Réponse sous 48h

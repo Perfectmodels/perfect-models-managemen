@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
-import { ArrowRight, Sparkles, Film, Camera } from "lucide-react"
+import { ArrowRight, Sparkles, Film, Camera, Award } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -56,33 +56,31 @@ export default function PortfolioPage() {
 
   return (
     <div className="min-h-screen bg-white pt-20">
-      {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-amber-50 to-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="mb-6 bg-amber-100 text-amber-800 border-amber-200">Notre Palmarès</Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
-              Une expertise <span className="text-amber-500">reconnue</span>
-            </h1>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-              Depuis 2021, Perfect Models Management participe à tous les événements majeurs de la mode au Gabon et
-              collabore avec les plus grands noms de l'industrie
-            </p>
-          </div>
+      {/* Hero Section stylée */}
+      <section className="relative py-32 bg-black text-white overflow-hidden">
+        <Image src="/flora4.jpg" alt="Défilé" fill priority className="object-cover object-center opacity-30 absolute inset-0 z-0" />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+          <Award className="mx-auto mb-6 h-16 w-16 text-amber-400 drop-shadow-lg" />
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg">Portfolio</h1>
+          <p className="text-2xl md:text-3xl font-semibold text-amber-200 mb-4">L’excellence sur tous les podiums</p>
+          <p className="text-lg md:text-xl text-neutral-100 max-w-2xl mx-auto mb-8">Depuis 2021, Perfect Models Management rayonne sur les plus grands événements de mode, clips et shootings en Afrique centrale.</p>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-black mb-2">{fashionShows.length}+</div>
-              <div className="text-neutral-600">Défilés de Mode</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-black mb-2">{videoClips.length}+</div>
-              <div className="text-neutral-600">Clips & Films</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-black mb-2">{photoShoots.length}+</div>
-              <div className="text-neutral-600">Shooting Photo</div>
-            </div>
+      {/* Chiffres clés */}
+      <section className="py-16 bg-gradient-to-r from-amber-50 to-amber-100 border-b border-amber-200">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div className="text-5xl font-extrabold text-amber-600 mb-2">{fashionShows.length}+</div>
+            <div className="text-lg text-neutral-700 font-medium">Défilés de Mode</div>
+          </div>
+          <div>
+            <div className="text-5xl font-extrabold text-blue-600 mb-2">{videoClips.length}+</div>
+            <div className="text-lg text-neutral-700 font-medium">Clips & Films</div>
+          </div>
+          <div>
+            <div className="text-5xl font-extrabold text-green-600 mb-2">{photoShoots.length}+</div>
+            <div className="text-lg text-neutral-700 font-medium">Shooting Photo</div>
           </div>
         </div>
       </section>
@@ -91,21 +89,15 @@ export default function PortfolioPage() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-3 mb-12">
-            <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center">
-              <Sparkles className="h-6 w-6 text-amber-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-black">Défilés de Mode</h2>
-              <p className="text-neutral-500">{fashionShows.length} événements majeurs</p>
-            </div>
+            <Sparkles className="h-10 w-10 text-amber-500" />
+            <h2 className="text-4xl font-bold text-black">Défilés de Mode</h2>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {fashionShows.map((show, index) => (
-              <Card key={index} className="p-6 border-0 shadow-md hover:shadow-lg transition-shadow duration-300 group">
-                <div className="flex items-start space-x-3">
-                  <div className="w-3 h-3 bg-amber-400 rounded-full mt-2 flex-shrink-0 group-hover:bg-amber-500 transition-colors"></div>
-                  <p className="text-neutral-700 leading-relaxed group-hover:text-black transition-colors">{show}</p>
+              <Card key={index} className="p-8 border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group bg-amber-50/60">
+                <div className="flex items-center space-x-4 mb-2">
+                  <Award className="h-6 w-6 text-amber-500 flex-shrink-0" />
+                  <span className="text-lg font-semibold text-black group-hover:text-amber-700 transition-colors">{show}</span>
                 </div>
               </Card>
             ))}
@@ -117,38 +109,18 @@ export default function PortfolioPage() {
       <section className="py-24 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-3 mb-12">
-            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-              <Film className="h-6 w-6 text-blue-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-black">Figuration - Clip Vidéo et Cinéma</h2>
-              <p className="text-neutral-500">{videoClips.length}+ productions audiovisuelles</p>
-            </div>
+            <Film className="h-10 w-10 text-blue-500" />
+            <h2 className="text-4xl font-bold text-black">Clips Vidéo & Cinéma</h2>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {videoClips.map((clip, index) => (
               <Card
                 key={index}
-                className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-300 bg-blue-50/60"
               >
-                <div className="relative">
-                  <Image
-                    src={`/placeholder.svg?height=200&width=300`}
-                    alt={clip}
-                    width={300}
-                    height={200}
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Film className="h-4 w-4 mb-1" />
-                  </div>
-                </div>
-                <div className="p-4">
-                  <p className="text-sm font-medium text-neutral-700 group-hover:text-black transition-colors">
-                    {clip}
-                  </p>
+                <div className="flex items-center space-x-4 mb-2">
+                  <Film className="h-6 w-6 text-blue-500 flex-shrink-0" />
+                  <span className="text-lg font-semibold text-black group-hover:text-blue-700 transition-colors">{clip}</span>
                 </div>
               </Card>
             ))}
@@ -156,42 +128,22 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Collaboration - Shooting Photo */}
+      {/* Shooting Photo */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-3 mb-12">
-            <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-              <Camera className="h-6 w-6 text-green-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-black">Collaboration - Shooting Photo</h2>
-              <p className="text-neutral-500">{photoShoots.length}+ collaborations créatives</p>
-            </div>
+            <Camera className="h-10 w-10 text-green-600" />
+            <h2 className="text-4xl font-bold text-black">Shooting Photo</h2>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {photoShoots.map((shoot, index) => (
               <Card
                 key={index}
-                className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-300 bg-green-50/60"
               >
-                <div className="relative">
-                  <Image
-                    src={`/placeholder.svg?height=250&width=300`}
-                    alt={shoot}
-                    width={300}
-                    height={250}
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Camera className="h-4 w-4 mb-1" />
-                  </div>
-                </div>
-                <div className="p-4">
-                  <p className="text-sm font-medium text-neutral-700 group-hover:text-black transition-colors">
-                    {shoot}
-                  </p>
+                <div className="flex items-center space-x-4 mb-2">
+                  <Camera className="h-6 w-6 text-green-600 flex-shrink-0" />
+                  <span className="text-lg font-semibold text-black group-hover:text-green-700 transition-colors">{shoot}</span>
                 </div>
               </Card>
             ))}
@@ -200,10 +152,10 @@ export default function PortfolioPage() {
       </section>
 
       {/* Note importante */}
-      <section className="py-16 bg-gradient-to-r from-amber-50 to-amber-100">
+      <section className="py-16 bg-gradient-to-r from-amber-50 to-amber-100 border-t border-amber-200">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <Badge className="mb-4 bg-amber-500 text-white border-0">Engagement Total</Badge>
-          <p className="text-lg text-amber-800 font-medium">
+          <p className="text-xl text-amber-800 font-medium">
             Notre agence de mannequins a participé à tous les événements de mode depuis 2021, son année de création.
           </p>
         </div>

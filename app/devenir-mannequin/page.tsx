@@ -77,100 +77,23 @@ export default function DevenirMannequinPage() {
 
   return (
     <div className="min-h-screen bg-white pt-20">
-      {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-amber-50 to-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="mb-6 bg-amber-100 text-amber-800 border-amber-200">Rejoignez-nous</Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
-              Devenir <span className="text-amber-500">Mannequin</span>
-            </h1>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-              Transformez votre passion en carrière professionnelle avec Perfect Models Management. Nous vous
-              accompagnons vers l'excellence.
-            </p>
-          </div>
+      {/* Critères d'admission */}
+      <section className="py-16 bg-amber-50 border-b border-amber-200">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-4xl font-extrabold text-amber-700 mb-4">Critères pour devenir mannequin</h2>
+          <ul className="text-lg text-neutral-800 space-y-2 mb-6 text-left mx-auto max-w-xl">
+            <li>• <b>Âge minimum :</b> 16 ans</li>
+            <li>• <b>Taille minimum :</b> 1m65 (femmes), 1m80 (hommes)</li>
+            <li>• <b>Bonne présentation et hygiène de vie</b></li>
+            <li>• <b>Motivation et professionnalisme</b></li>
+            <li>• <b>Disponibilité pour les formations et castings</b></li>
+            <li>• <b>Respect des valeurs de l’agence</b></li>
+            <li>• <b>Passion pour la mode et la culture gabonaise</b></li>
+          </ul>
+          <p className="text-base text-neutral-600">Si vous correspondez à ces critères, remplissez le formulaire ci-dessous pour postuler.</p>
         </div>
       </section>
-
-      {/* Requirements */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <Badge className="mb-6 bg-amber-100 text-amber-800 border-amber-200">Critères</Badge>
-              <h2 className="text-4xl font-bold text-black mb-6">
-                Avez-vous le <span className="text-amber-500">profil</span> ?
-              </h2>
-              <p className="text-lg text-neutral-600 mb-8">
-                Découvrez si vous correspondez aux critères recherchés par notre agence pour intégrer notre sélection de
-                mannequins professionnels.
-              </p>
-
-              <div className="space-y-4">
-                {requirements.map((requirement, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-amber-500 flex-shrink-0" />
-                    <span className="text-neutral-700">{requirement}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative">
-              <Card className="p-8 border-0 shadow-lg">
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Star className="h-8 w-8 text-amber-600" />
-                  </div>
-                  <h3 className="text-2xl font-semibold text-black">Évaluation Gratuite</h3>
-                  <p className="text-neutral-600 mt-2">Découvrez votre potentiel en 5 minutes</p>
-                </div>
-
-                <Link href="/devenir-mannequin/evaluation" passHref legacyBehavior>
-                  <Button className="w-full bg-black hover:bg-neutral-800 text-white mb-4">
-                    Commencer l'Évaluation
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-
-                <p className="text-sm text-neutral-500 text-center">
-                  100% gratuit • Sans engagement • Réponse sous 48h
-                </p>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="py-24 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="mb-6 bg-amber-100 text-amber-800 border-amber-200">Notre Processus</Badge>
-            <h2 className="text-4xl font-bold text-black mb-6">
-              5 étapes vers le <span className="text-amber-500">succès</span>
-            </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Un processus simple et transparent pour vous accompagner de la candidature à l'intégration
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-5 gap-8">
-            {process.map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-amber-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-lg font-semibold text-black mb-2">{item.title}</h3>
-                <p className="text-sm text-neutral-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Application Form */}
+      {/* Formulaire de candidature */}
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">

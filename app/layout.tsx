@@ -27,10 +27,10 @@ export default function RootLayout({
         <meta name="twitter:title" content="Perfect Model Management - Agence de mannequins Gabon" />
         <meta name="twitter:description" content="Agence de mannequins, casting, formation, événementiel, Gabon, Afrique" />
       </Head>
-      <body>
+      <body className="bg-blanc text-noir">
         <Navbar />
         {children}
-        <footer className="w-full bg-neutral-900 text-white py-8 mt-24">
+        <footer className="w-full bg-noir text-blanc py-8 mt-24">
           <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-lg font-bold">Perfect Models Management © {new Date().getFullYear()}</div>
             <div className="flex space-x-6">

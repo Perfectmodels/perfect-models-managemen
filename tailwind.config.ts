@@ -65,7 +65,12 @@ const config: Config = {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
-  			}
+  			},
+        noir: '#111111', // Noir profond
+        blanc: '#FFFFFF', // Blanc pur
+        or: '#D4AF37', // Or royal
+        gris: '#F5F5F5', // Gris perle
+        beige: '#EFE8E0', // Beige nude
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

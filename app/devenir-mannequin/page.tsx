@@ -77,27 +77,27 @@ export default function DevenirMannequinPage() {
 
   return (
     <>
-      <section className="relative min-h-screen py-32 bg-gradient-to-br from-black via-neutral-900 to-amber-900/80 text-white overflow-hidden">
+      <section className="relative min-h-screen py-32 bg-blanc text-noir overflow-hidden">
         <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-10 drop-shadow-xl text-amber-300 uppercase tracking-wide text-center">Devenir Mannequin</h1>
-          <p className="mb-10 text-xl text-amber-100 text-center font-serif italic">Remplissez ce formulaire pour rejoindre l’agence Perfect Models Management. Les champs marqués d’une * sont obligatoires.</p>
-          <Card className="bg-white/10 rounded-3xl shadow-2xl p-10 backdrop-blur-md border border-amber-200">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-10 drop-shadow-xl text-or uppercase tracking-wide text-center">Devenir Mannequin</h1>
+          <p className="mb-10 text-xl text-noir/80 text-center font-serif italic">Remplissez ce formulaire pour rejoindre l’agence Perfect Models Management. Les champs marqués d’une * sont obligatoires.</p>
+          <Card className="bg-gris/40 rounded-3xl shadow-2xl p-10 backdrop-blur-md border border-or">
             {submitted ? (
               <div className="text-center py-16">
-                <h2 className="text-2xl font-bold text-amber-600 mb-4">Merci !</h2>
-                <p className="text-lg text-amber-100 mb-4">Votre candidature a bien été envoyée.</p>
-                <p className="text-amber-200">Notre équipe vous contactera sous 48h pour un retour personnalisé.</p>
+                <h2 className="text-2xl font-bold text-or mb-4">Merci !</h2>
+                <p className="text-lg text-noir mb-4">Votre candidature a bien été envoyée.</p>
+                <p className="text-or">Notre équipe vous contactera sous 48h pour un retour personnalisé.</p>
               </div>
             ) : (
               <form className="space-y-8" onSubmit={handleSubmit}>
                 {error && <div className="bg-red-100 text-red-700 p-3 rounded mb-4 text-sm">{error}</div>}
                 {/* I. Informations personnelles */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-4 text-amber-600">I. Informations personnelles</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-or">I. Informations personnelles</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block mb-1 font-medium text-amber-200">Nom & prénom *</label>
-                      <input name="nom_prenom" required className="w-full p-4 border border-amber-200 rounded-xl bg-black/30 text-white placeholder:text-amber-300" placeholder="Ex : Nynelle Mbazoghe" />
+                      <label className="block mb-1 font-medium text-or">Nom & prénom *</label>
+                      <input name="nom_prenom" required className="w-full p-4 border border-or rounded-xl bg-noir/30 text-blanc placeholder:text-or" placeholder="Ex : Nynelle Mbazoghe" />
                     </div>
                     <div>
                       <label className="block mb-1 font-medium">Date de naissance *</label>
@@ -131,7 +131,7 @@ export default function DevenirMannequinPage() {
                 </div>
                 {/* II. Mensurations */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-4 text-amber-600">II. Mensurations</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-or">II. Mensurations</h3>
                   <div className="grid md:grid-cols-3 gap-6">
                     <div>
                       <label className="block mb-1 font-medium">Taille (cm) *</label>
@@ -165,7 +165,7 @@ export default function DevenirMannequinPage() {
                 </div>
                 {/* III. Expérience et motivation */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-4 text-amber-600">III. Expérience et motivation</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-or">III. Expérience et motivation</h3>
                   <div className="mb-4">
                     <label className="block mb-1 font-medium">As-tu déjà eu une expérience dans le mannequinat ? *</label>
                     <div className="flex items-center space-x-6 mt-2">
@@ -192,7 +192,7 @@ export default function DevenirMannequinPage() {
                 </div>
                 {/* IV. Mini questionnaire : Culture de la Mode Gabonaise */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-4 text-amber-600">IV. Mini questionnaire : Culture de la Mode Gabonaise</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-or">IV. Mini questionnaire : Culture de la Mode Gabonaise</h3>
                   <div className="space-y-4">
                     <div>
                       <label className="block mb-1 font-medium">1. Cite un(e) styliste ou créateur(trice) de mode gabonais(e) que tu connais :</label>
@@ -218,7 +218,7 @@ export default function DevenirMannequinPage() {
                 </div>
                 {/* V. Signature */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-4 text-amber-600">V. Signature du/de la candidat(e)</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-or">V. Signature du/de la candidat(e)</h3>
                   <div className="mb-2 text-neutral-600 text-sm">
                     Je certifie que les informations fournies dans ce formulaire sont exactes.
                   </div>
@@ -237,10 +237,10 @@ export default function DevenirMannequinPage() {
                 <div className="flex items-start space-x-3 mt-6">
                   <input name="cgu" type="checkbox" className="mt-1" required />
                   <p className="text-sm text-neutral-600">
-                    J'accepte les <a href="/conditions" className="text-amber-600 hover:underline" target="_blank">conditions d'utilisation</a> et la <a href="/confidentialite" className="text-amber-600 hover:underline" target="_blank">politique de confidentialité</a> *
+                    J'accepte les <a href="/conditions" className="text-or hover:underline" target="_blank">conditions d'utilisation</a> et la <a href="/confidentialite" className="text-or hover:underline" target="_blank">politique de confidentialité</a> *
                   </p>
                 </div>
-                <button type="submit" className="w-full bg-amber-400 text-black py-4 text-2xl rounded-full font-bold shadow-lg hover:bg-amber-500 transition-colors uppercase tracking-wider" disabled={loading}>
+                <button type="submit" className="w-full bg-or text-noir py-4 text-2xl rounded-full font-bold shadow-lg hover:bg-or/90 transition-colors uppercase tracking-wider" disabled={loading}>
                   {loading ? "Envoi en cours..." : "Envoyer ma Candidature"}
                 </button>
               </form>
@@ -250,23 +250,23 @@ export default function DevenirMannequinPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-neutral-50">
+      <section className="py-24 bg-gris text-noir">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="mb-6 bg-amber-100 text-amber-800 border-amber-200">Témoignages</Badge>
-            <h2 className="text-4xl font-bold text-black mb-6">
-              Ils nous font <span className="text-amber-500">confiance</span>
+            <Badge className="mb-6 bg-or text-noir border-or">Témoignages</Badge>
+            <h2 className="text-4xl font-bold text-noir mb-6">
+              Ils nous font <span className="text-or">confiance</span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="p-6 border-0 shadow-lg">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
-                  <Users className="h-6 w-6 text-amber-600" />
+                <div className="w-12 h-12 bg-or rounded-full flex items-center justify-center">
+                  <Users className="h-6 w-6 text-or" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-black">Mirabelle</h4>
+                  <h4 className="font-semibold text-noir">Mirabelle</h4>
                   <p className="text-sm text-neutral-500">Miss Tourisme</p>
                 </div>
               </div>
@@ -278,11 +278,11 @@ export default function DevenirMannequinPage() {
 
             <Card className="p-6 border-0 shadow-lg">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
-                  <Users className="h-6 w-6 text-amber-600" />
+                <div className="w-12 h-12 bg-or rounded-full flex items-center justify-center">
+                  <Users className="h-6 w-6 text-or" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-black">Pablo</h4>
+                  <h4 className="font-semibold text-noir">Pablo</h4>
                   <p className="text-sm text-neutral-500">Mannequin Homme</p>
                 </div>
               </div>
@@ -294,11 +294,11 @@ export default function DevenirMannequinPage() {
 
             <Card className="p-6 border-0 shadow-lg">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
-                  <Users className="h-6 w-6 text-amber-600" />
+                <div className="w-12 h-12 bg-or rounded-full flex items-center justify-center">
+                  <Users className="h-6 w-6 text-or" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-black">Noemi Kim</h4>
+                  <h4 className="font-semibold text-noir">Noemi Kim</h4>
                   <p className="text-sm text-neutral-500">Mannequin Femme</p>
                 </div>
               </div>

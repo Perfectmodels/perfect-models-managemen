@@ -20,15 +20,15 @@ export default function MannequinsPage() {
                 <Image src={model.image} alt={model.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10" />
                 <span className="absolute top-4 left-4 z-20 bg-amber-400 text-black px-4 py-1 rounded-full text-xs font-bold uppercase shadow-lg">Talent</span>
-              </div>
+          </div>
               <div className="p-6 relative z-20">
                 <h3 className="text-2xl font-bold mb-2 text-amber-100 drop-shadow">{model.name}</h3>
                 <p className="text-amber-200 mb-2 text-base italic font-serif">{model.distinctions}</p>
               </div>
             </div>
           ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 }

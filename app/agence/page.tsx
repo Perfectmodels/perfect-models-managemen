@@ -18,7 +18,7 @@ export default function AgencePage() {
           </ul>
           <p className="text-amber-200 text-center">Rejoignez l’aventure Perfect Models Management !</p>
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
   );
 }

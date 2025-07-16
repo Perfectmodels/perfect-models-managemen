@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setCurrentSlide((prev: number) => (prev + 1) % slides.length);
     }, 5000);
 
     return () => clearInterval(timer);
@@ -80,6 +80,15 @@ const Hero: React.FC = () => {
       </div>
       <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
         <div className="text-white text-center px-4">
+          <Link href="/" className="mb-12">
+            <Image
+              src="/logo-pmm.png"
+              alt="Perfect Models Management"
+              width={200}
+              height={80}
+              className="cursor-pointer hover:opacity-80 transition-opacity"
+            />
+          </Link>
           <h1 className="text-4xl md:text-6xl font-bold mb-4">{slides[currentSlide].title}</h1>
           <p className="text-xl md:text-2xl mb-8">{slides[currentSlide].subtitle}</p>
           <Link href={slides[currentSlide].link}>

@@ -174,12 +174,14 @@ export default function DevenirMannequinPage() {
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <Badge className="mb-6 bg-amber-100 text-amber-800 border-amber-200">Candidature</Badge>
-            <h2 className="text-4xl font-bold text-black mb-6">
-              Formulaire de Candidature <span className="text-amber-500">Perfect Models Management</span>
-            </h2>
-            <p className="text-lg text-neutral-600">
-              Merci de remplir ce formulaire avec soin. Les champs marqués d'une * sont obligatoires.
+            <h1 className="text-5xl font-extrabold text-black mb-4">
+              Candidature Mannequin
+            </h1>
+            <p className="text-lg text-neutral-700 mb-2">
+              Rejoignez l’agence Perfect Models Management et révélez votre potentiel !
+            </p>
+            <p className="text-base text-neutral-500">
+              Merci de remplir ce formulaire avec soin. Les champs marqués d’une * sont obligatoires.
             </p>
           </div>
           <Card className="p-8 border-0 shadow-lg">

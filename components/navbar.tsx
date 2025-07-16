@@ -60,7 +60,7 @@ export default function Navbar() {
           </div>
 
           <Link href="/devenir-mannequin">
-            <Button className="bg-black hover:bg-neutral-800 text-white px-6">Devenir Mannequin</Button>
+            <Button size="lg" className="bg-black hover:bg-neutral-800 text-white px-8 text-lg font-semibold">Devenir Mannequin</Button>
           </Link>
         </div>
       </div>
@@ -97,7 +97,7 @@ export default function Navbar() {
               Contact
             </Link>
             <Link href="/devenir-mannequin" onClick={() => setOpen(false)}>
-              <Button className="bg-black hover:bg-neutral-800 text-white w-full mt-4">Devenir Mannequin</Button>
+              <Button size="lg" className="bg-black hover:bg-neutral-800 text-white w-full mt-4 text-lg font-semibold">Devenir Mannequin</Button>
             </Link>
           </div>
         </div>

@@ -69,26 +69,10 @@ const Hero: React.FC = () => {
   }, [slides.length]);
 
   return (
-    <div className="relative h-screen w-full">
-      <div className="absolute inset-0">
-        <Image
-          src={slides[currentSlide].image}
-          alt="Hero"
-          fill
-          className="object-cover"
-        />
-      </div>
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <div className="text-white text-center px-4">
-          <Link href="/" className="mb-12">
-            <Image
-              src="/logo-pmm.png"
-              alt="Perfect Models Management"
-              width={200}
-              height={80}
-              className="cursor-pointer hover:opacity-80 transition-opacity"
-            />
-          </Link>
+    <div className="relative h-[90vh] w-full">
+      <Image src={slides[currentSlide].image} alt="Hero" fill className="object-cover" />
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4 sm:px-8 md:px-12">
+        <div className="text-white text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">{slides[currentSlide].title}</h1>
           <p className="text-xl md:text-2xl mb-8">{slides[currentSlide].subtitle}</p>
           <Link href={slides[currentSlide].link}>

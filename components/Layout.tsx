@@ -16,13 +16,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center">
-              <Image
-                src="/logo-pmm.png"
-                alt="Perfect Models Management"
-                width={150}
-                height={60}
-                className="cursor-pointer"
-              />
+              <div className="relative w-[150px] h-[60px]">
+                <Image
+                  src="/logo-pmm.png"
+                  alt="Perfect Models Management"
+                  fill
+                  className="object-contain cursor-pointer hover:scale-105 transition-transform duration-200"
+                />
+              </div>
             </Link>
             <nav className="hidden md:flex space-x-8">
               <Link

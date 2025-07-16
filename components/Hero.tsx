@@ -62,16 +62,8 @@ const Hero: React.FC = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev: number) => (prev + 1) % slides.length);
-    }, 5000);
-
-    return () => clearInterval(timer);
-  }, [slides.length]);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // Changer d'image toutes les 5 secondes
+    }, 5000);
 
     return () => clearInterval(timer);
   }, [slides.length]);

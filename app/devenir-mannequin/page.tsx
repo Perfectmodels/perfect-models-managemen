@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
@@ -53,12 +55,10 @@ export default function DevenirMannequinPage() {
     setLoading(true);
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
     try {
       const res = await fetch("/api/evaluation", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: formData,
       });
       if (!res.ok) {
         const err = await res.json();
@@ -67,6 +67,7 @@ export default function DevenirMannequinPage() {
         return;
       }
       setSubmitted(true);
+      form.reset();
     } catch (e) {
       setError("Erreur réseau ou serveur. Veuillez réessayer plus tard.");
     } finally {

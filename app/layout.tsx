@@ -4,9 +4,9 @@ import Navbar from "@/components/navbar";
 import Head from "next/head";
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'Perfect Models Management',
+  description: 'Agence de mannequins',
+  generator: 'Perfect Models Management',
 }
 
 export default function RootLayout({

@@ -14,32 +14,32 @@ interface Model {
 
 const models: Model[] = [
   {
-    name: "Sophie D.",
-    image: "/models/sophie.jpg",
-    category: "Mannequin Haute Couture",
-    height: "178 cm",
-    age: "24 ans"
+    name: "Ruth Jussy",
+    image: "/ruth.jpg",
+    category: "Meilleur Mannequin Espoir du Gabon, Miss Tourisme Ogooué-Maritime,Deuxieme Dauphine Miss Tourisme Gabon, étoile montante de l'agence",
+    height: "-",
+    age: "-"
   },
   {
-    name: "Thomas L.",
-    image: "/models/thomas.jpg",
-    category: "Mannequin Homme",
-    height: "185 cm",
-    age: "27 ans"
+    name: "Kendra Mebiame",
+    image: "/kendra.jpg",
+    category: "Mannequin, Meilleur Mannequin Espoir du Gabon 2022 ",
+    height: "-",
+    age: "-"
   },
   {
-    name: "Emma R.",
-    image: "/models/emma.jpg",
-    category: "Mannequin Teen",
-    height: "172 cm",
-    age: "19 ans"
+    name: "Nynelle Mbazoghe",
+    image: "/nynelle.jpg",
+    category: "Première dauphine Miss Casino Croisette, active dans Femmes Actives du Gabon",
+    height: "-",
+    age: "-"
   },
   {
-    name: "Lucas M.",
-    image: "/models/lucas.jpg",
-    category: "Mannequin Fitness",
-    height: "182 cm",
-    age: "22 ans"
+    name: "Noémie Kim",
+    image: "/noemi.jpg",
+    category: "Mannequin phare, ambassadrice Racines & Modernité, shootings et défilés",
+    height: "-",
+    age: "-"
   }
 ];
 

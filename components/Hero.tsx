@@ -73,8 +73,8 @@ const Hero: React.FC = () => {
       <Image src={slides[currentSlide].image} alt="Hero" fill className="object-cover" />
       <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4 sm:px-8 md:px-12">
         <div className="text-white text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">{slides[currentSlide].title}</h1>
-          <p className="text-xl md:text-2xl mb-8">{slides[currentSlide].subtitle}</p>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">{slides[currentSlide].title}</h1>
+          <p className="text-2xl md:text-3xl mb-10">{slides[currentSlide].subtitle}</p>
           <Link href={slides[currentSlide].link}>
             <button className="bg-white text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors">
               {slides[currentSlide].button}

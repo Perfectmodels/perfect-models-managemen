@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Perfect Models Management',
     description: 'Agence de mannequins professionnelle spécialisée dans la mode et la publicité',
-    url: 'https://perfect-models-management.com',
+    url: 'https://perfectmodels.ga',
     siteName: 'Perfect Models Management',
     images: [
       {

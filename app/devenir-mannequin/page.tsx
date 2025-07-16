@@ -176,102 +176,169 @@ export default function DevenirMannequinPage() {
           <div className="text-center mb-12">
             <Badge className="mb-6 bg-amber-100 text-amber-800 border-amber-200">Candidature</Badge>
             <h2 className="text-4xl font-bold text-black mb-6">
-              Postulez <span className="text-amber-500">maintenant</span>
+              Formulaire de Candidature <span className="text-amber-500">Perfect Models Management</span>
             </h2>
             <p className="text-lg text-neutral-600">
-              Remplissez ce formulaire pour commencer votre aventure avec Perfect Models Management
+              Merci de remplir ce formulaire avec soin. Les champs marqués d'une * sont obligatoires.
             </p>
           </div>
-
           <Card className="p-8 border-0 shadow-lg">
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              {error && <div className="bg-red-100 text-red-700 p-3 rounded mb-4 text-sm">{error}</div>}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <Input name="prenom" placeholder="Votre prénom" required />
-                </div>
-                <div>
-                  <Input name="nom" placeholder="Votre nom" required />
-                </div>
+            {submitted ? (
+              <div className="text-center py-16">
+                <h2 className="text-2xl font-bold text-amber-600 mb-4">Merci !</h2>
+                <p className="text-lg text-neutral-700 mb-4">Votre candidature a bien été envoyée.</p>
+                <p className="text-neutral-500">Notre équipe vous contactera sous 48h pour un retour personnalisé.</p>
               </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
+            ) : (
+              <form className="space-y-8" onSubmit={handleSubmit}>
+                {error && <div className="bg-red-100 text-red-700 p-3 rounded mb-4 text-sm">{error}</div>}
+                {/* I. Informations personnelles */}
                 <div>
-                  <Input name="email" type="email" placeholder="votre@email.com" required />
+                  <h3 className="text-xl font-semibold mb-4 text-amber-600">I. Informations personnelles</h3>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block mb-1 font-medium">Nom & prénom *</label>
+                      <input name="nom_prenom" required className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Ex : Nynelle Mbazoghe" />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">Date de naissance *</label>
+                      <input name="date_naissance" type="date" required className="w-full p-3 border border-neutral-300 rounded-md" />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">Âge *</label>
+                      <input name="age" type="number" min="10" max="99" required className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Ex : 18" />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">Ville de résidence *</label>
+                      <input name="ville" required className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Ex : Libreville" />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">Nationalité *</label>
+                      <input name="nationalite" required className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Ex : Gabonaise" />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">Téléphone / WhatsApp *</label>
+                      <input name="telephone" required className="w-full p-3 border border-neutral-300 rounded-md" placeholder="+241 ..." />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">Adresse e-mail *</label>
+                      <input name="email" type="email" required className="w-full p-3 border border-neutral-300 rounded-md" placeholder="votre@email.com" />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">Instagram / Facebook (optionnel)</label>
+                      <input name="reseaux" className="w-full p-3 border border-neutral-300 rounded-md" placeholder="@votreprofil" />
+                    </div>
+                  </div>
                 </div>
+                {/* II. Mensurations */}
                 <div>
-                  <Input name="telephone" type="tel" placeholder="+241 XX XX XX XX" required />
+                  <h3 className="text-xl font-semibold mb-4 text-amber-600">II. Mensurations</h3>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div>
+                      <label className="block mb-1 font-medium">Taille (cm) *</label>
+                      <input name="taille" type="number" required className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Ex : 175" />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">Poids (kg) *</label>
+                      <input name="poids" type="number" required className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Ex : 60" />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">Poitrine (cm)</label>
+                      <input name="poitrine" type="number" className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Ex : 85" />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">Tour de taille (cm)</label>
+                      <input name="taille_tour" type="number" className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Ex : 60" />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">Hanches (cm)</label>
+                      <input name="hanches" type="number" className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Ex : 90" />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">Pointure</label>
+                      <input name="pointure" type="text" className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Ex : 39" />
+                    </div>
+                    <div className="md:col-span-2">
+                      <label className="block mb-1 font-medium">Couleur des yeux / cheveux</label>
+                      <input name="couleur_yeux_cheveux" className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Ex : Yeux marron, cheveux noirs" />
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-6">
+                {/* III. Expérience et motivation */}
                 <div>
-                  <Input name="age" type="number" placeholder="25" required />
+                  <h3 className="text-xl font-semibold mb-4 text-amber-600">III. Expérience et motivation</h3>
+                  <div className="mb-4">
+                    <label className="block mb-1 font-medium">As-tu déjà eu une expérience dans le mannequinat ? *</label>
+                    <div className="flex items-center space-x-6 mt-2">
+                      <label className="flex items-center">
+                        <input type="radio" name="experience_mannequinat" value="oui" required className="mr-2" /> Oui
+                      </label>
+                      <label className="flex items-center">
+                        <input type="radio" name="experience_mannequinat" value="non" required className="mr-2" /> Non
+                      </label>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <label className="block mb-1 font-medium">Si oui, donne quelques détails :</label>
+                    <textarea name="details_experience" className="w-full p-3 border border-neutral-300 rounded-md" rows={2} placeholder="Décrivez brièvement votre expérience (optionnel)" />
+                  </div>
+                  <div className="mb-4">
+                    <label className="block mb-1 font-medium">Pourquoi veux-tu rejoindre notre agence ? *</label>
+                    <textarea name="motivation" required className="w-full p-3 border border-neutral-300 rounded-md" rows={2} placeholder="Votre motivation" />
+                  </div>
+                  <div>
+                    <label className="block mb-1 font-medium">As-tu des compétences particulières ? (ex : danse, chant, défilé, acting, maquillage...)</label>
+                    <input name="competences" className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Listez vos compétences (optionnel)" />
+                  </div>
                 </div>
+                {/* IV. Mini questionnaire : Culture de la Mode Gabonaise */}
                 <div>
-                  <Input name="taille" type="number" placeholder="175" required />
+                  <h3 className="text-xl font-semibold mb-4 text-amber-600">IV. Mini questionnaire : Culture de la Mode Gabonaise</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block mb-1 font-medium">1. Cite un(e) styliste ou créateur(trice) de mode gabonais(e) que tu connais :</label>
+                      <input name="styliste_gabonais" className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Votre réponse" />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">2. Quel événement ou festival célèbre la mode au Gabon ?</label>
+                      <input name="evenement_mode_gabon" className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Votre réponse" />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">3. À ton avis, quelles sont les matières ou tissus traditionnellement utilisés dans la mode gabonaise ?</label>
+                      <input name="tissus_gabon" className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Votre réponse" />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">4. Pourquoi est-il important de valoriser la mode locale ?</label>
+                      <input name="valoriser_mode_locale" className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Votre réponse" />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">5. Qu’est-ce que la mode représente pour toi personnellement ?</label>
+                      <input name="mode_perso" className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Votre réponse" />
+                    </div>
+                  </div>
                 </div>
+                {/* V. Signature */}
                 <div>
-                  <select
-                    name="genre"
-                    className="w-full p-3 border border-neutral-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                    required
-                  >
-                    <option value="">Sélectionner</option>
-                    <option value="femme">Femme</option>
-                    <option value="homme">Homme</option>
-                  </select>
+                  <h3 className="text-xl font-semibold mb-4 text-amber-600">V. Signature du/de la candidat(e)</h3>
+                  <div className="mb-2 text-neutral-600 text-sm">
+                    Je certifie que les informations fournies dans ce formulaire sont exactes.
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block mb-1 font-medium">Signature *</label>
+                      <input name="signature" required className="w-full p-3 border border-neutral-300 rounded-md" placeholder="Nom et prénom" />
+                    </div>
+                    <div>
+                      <label className="block mb-1 font-medium">Date *</label>
+                      <input name="date_signature" type="date" required className="w-full p-3 border border-neutral-300 rounded-md" />
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-2">Expérience</label>
-                <textarea
-                  name="experience"
-                  className="w-full p-3 border border-neutral-300 rounded-md focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                  rows={3}
-                  placeholder="Décrivez votre expérience dans le mannequinat (débutant accepté)"
-                ></textarea>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-2">Photos *</label>
-                <div className="border-2 border-dashed border-neutral-300 rounded-lg p-8 text-center hover:border-amber-400 transition-colors">
-                  <Upload className="h-12 w-12 text-neutral-400 mx-auto mb-4" />
-                  <p className="text-neutral-600 mb-2">Glissez vos photos ici ou cliquez pour sélectionner</p>
-                  <p className="text-sm text-neutral-500">
-                    Minimum 3 photos : portrait, pied en cap, profil (JPG, PNG max 5MB chacune)
-                  </p>
-                  <input name="photos" type="file" accept="image/*" multiple required className="mt-4" />
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <input name="cgu" type="checkbox" className="mt-1" required />
-                <p className="text-sm text-neutral-600">
-                  J'accepte les{" "}
-                  <a href="#" className="text-amber-600 hover:underline">
-                    conditions d'utilisation
-                  </a>{" "}
-                  et la{" "}
-                  <a href="#" className="text-amber-600 hover:underline">
-                    politique de confidentialité
-                  </a>{" "}
-                  *
-                </p>
-              </div>
-
-              <Button className="w-full bg-black hover:bg-neutral-800 text-white py-4 text-lg" disabled={loading}>
-                {loading ? "Envoi en cours..." : (<><span>Envoyer ma Candidature</span><ArrowRight className="ml-2 h-5 w-5" /></>)}
-              </Button>
-            </form>
-           {submitted && (
-             <div className="text-center py-16">
-               <h2 className="text-2xl font-bold text-amber-600 mb-4">Merci !</h2>
-               <p className="text-lg text-neutral-700 mb-4">Votre candidature a bien été envoyée.</p>
-               <p className="text-neutral-500">Notre équipe vous contactera sous 48h pour un retour personnalisé.</p>
-             </div>
-           )}
+                <Button className="w-full bg-black hover:bg-neutral-800 text-white py-4 text-lg" disabled={loading}>
+                  {loading ? "Envoi en cours..." : (<><span>Envoyer ma Candidature</span></>)}
+                </Button>
+              </form>
+            )}
           </Card>
         </div>
       </section>

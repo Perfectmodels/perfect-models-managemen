@@ -380,6 +380,25 @@ export default function PerfectFashionDayPage() {
           </Link>
         </div>
       </section>
+
+      <section className="mt-16">
+        <h2 className="text-3xl font-bold text-amber-700 mb-4">Performance d’ouverture : Lady Riaba</h2>
+        <p className="text-lg text-neutral-700 mb-6">
+          L’événement a débuté par une performance artistique de <b>Lady Riaba</b>, qui a captivé le public avec un slam intitulé <i>« Racine et Modernité »</i>. Un hommage vibrant à la culture gabonaise, entre tradition et innovation.
+        </p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <img src="/ladyriaba (1).jpg" alt="Lady Riaba 1" className="rounded shadow" />
+          <img src="/ladyriaba (5).jpg" alt="Lady Riaba 2" className="rounded shadow" />
+          <img src="/ladyriaba (6).jpg" alt="Lady Riaba 3" className="rounded shadow" />
+          <img src="/ladyriaba (8).jpg" alt="Lady Riaba 4" className="rounded shadow" />
+          <img src="/ladyriaba (10).jpg" alt="Lady Riaba 5" className="rounded shadow" />
+          <img src="/ladyriaba (14).jpg" alt="Lady Riaba 6" className="rounded shadow" />
+          <img src="/ladyriaba (20).jpg" alt="Lady Riaba 7" className="rounded shadow" />
+          <img src="/ladyriaba (22).jpg" alt="Lady Riaba 8" className="rounded shadow" />
+          <img src="/ladyriaba (26).jpg" alt="Lady Riaba 9" className="rounded shadow" />
+          <img src="/ladyriaba (28).jpg" alt="Lady Riaba 10" className="rounded shadow" />
+        </div>
+      </section>
     </div>
   )
 }

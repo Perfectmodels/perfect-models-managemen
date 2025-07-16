@@ -37,31 +37,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Présentation */}
+      {/* Présentation en 2 colonnes */}
       <section className="py-24 bg-blanc text-noir">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-or">L'agence de référence au Gabon</h2>
-          <p className="text-xl text-noir/80 mb-8">
-            Perfect Models Management est une agence de mannequins et de talents spécialisée dans la mode, la publicité et l’événementiel. Nous révélons, formons et accompagnons les talents d’aujourd’hui et de demain.
-          </p>
-          <div className="flex flex-col md:flex-row gap-8 justify-center items-center mt-8">
-            <div className="flex-1 bg-gris rounded-2xl p-8 shadow-md">
-              <h3 className="text-2xl font-semibold mb-2 text-or">+50 mannequins</h3>
-              <p className="text-noir/70">Sélectionnés pour leur professionnalisme, leur charisme et leur diversité.</p>
-            </div>
-            <div className="flex-1 bg-gris rounded-2xl p-8 shadow-md">
-              <h3 className="text-2xl font-semibold mb-2 text-or">Casting & Formation</h3>
-              <p className="text-noir/70">Un accompagnement sur-mesure pour révéler le potentiel de chaque talent.</p>
-            </div>
-            <div className="flex-1 bg-gris rounded-2xl p-8 shadow-md">
-              <h3 className="text-2xl font-semibold mb-2 text-or">Événementiel</h3>
-              <p className="text-noir/70">Organisation de défilés, shootings, campagnes et événements de prestige.</p>
-            </div>
+        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-or">L'agence de référence au Gabon</h2>
+            <p className="text-xl text-noir/80 mb-8">
+              Perfect Models Management est une agence de mannequins et de talents spécialisée dans la mode, la publicité et l’événementiel. Nous révélons, formons et accompagnons les talents d’aujourd’hui et de demain.
+            </p>
+            <ul className="space-y-4 text-lg text-noir/70 mb-8">
+              <li>+50 mannequins sélectionnés pour leur professionnalisme, leur charisme et leur diversité.</li>
+              <li>Casting & Formation sur-mesure pour révéler le potentiel de chaque talent.</li>
+              <li>Organisation de défilés, shootings, campagnes et événements de prestige.</li>
+            </ul>
+          </div>
+          <div className="flex justify-center">
+            <Image src="/flora.jpg" alt="Directrice" width={350} height={350} className="rounded-2xl shadow-lg object-cover" />
           </div>
         </div>
       </section>
 
-      {/* Services */}
+      {/* Services en grille */}
       <section className="py-24 bg-beige text-noir">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-or text-center">Nos Services</h2>
@@ -85,7 +81,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Témoignages */}
+      {/* Témoignages en slider/cards */}
       <section className="py-24 bg-gris text-noir">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-or">Ils nous font confiance</h2>
@@ -109,7 +105,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partenaires */}
+      {/* Partenaires en bandeau */}
       <section className="py-16 bg-blanc text-noir">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-or">Ils nous soutiennent</h2>
@@ -121,6 +117,19 @@ export default function Home() {
             <Image src="/Sabo Fashion.jpg" alt="Sabo Fashion" width={80} height={80} className="opacity-80" />
             {/* Ajoute d'autres logos partenaires ici */}
           </div>
+        </div>
+      </section>
+
+      {/* CTA final */}
+      <section className="py-16 bg-or text-noir text-center">
+        <div className="max-w-2xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Vous souhaitez collaborer avec nous ?</h2>
+          <p className="text-xl mb-8">Contactez-nous pour discuter de vos besoins ou découvrir nos talents.</p>
+          <Link href="/contact">
+            <button className="bg-noir text-or font-bold px-10 py-4 rounded-full text-xl shadow-lg hover:bg-or hover:text-noir hover:scale-105 hover:shadow-xl transition-all duration-200 border-2 border-noir focus:outline-none focus:ring-2 focus:ring-noir focus:ring-offset-2">
+              Contactez l'agence
+            </button>
+          </Link>
         </div>
       </section>
       <style jsx global>{`

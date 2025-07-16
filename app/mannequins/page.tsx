@@ -174,27 +174,16 @@ export default function MannequinsPage() {
   const filteredMales = maleModels.filter(m => m.name.toLowerCase().includes(search.toLowerCase()));
 
   return (
-    <div className="min-h-screen bg-white pt-20">
-      {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-amber-50 to-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="mb-6 bg-amber-100 text-amber-800 border-amber-200">Nos Talents</Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
-              22 mannequins d'<span className="text-amber-500">exception</span>
-            </h1>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-              Découvrez notre sélection rigoureuse de talents masculins et féminins, chacun apportant sa personnalité
-              unique et son professionnalisme
-            </p>
-          </div>
-
-          {/* Search & Filter */}
+    <main>
+      {/* Titre + barre de recherche/filtres */}
+      <section className="py-24 bg-blanc text-noir">
+        <div className="max-w-7xl mx-auto px-4">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-8 text-or drop-shadow-xl uppercase tracking-wide text-center">Nos Mannequins</h1>
           <div className="max-w-2xl mx-auto mb-16">
             <div className="flex gap-4">
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-neutral-400" />
-                <Input placeholder="Rechercher un mannequin..." className="pl-10" value={search} onChange={e => setSearch(e.target.value)} />
+                <input placeholder="Rechercher un mannequin..." className="pl-10 w-full p-3 rounded-md border border-gris bg-gris/50 text-noir" value={search} onChange={e => setSearch(e.target.value)} />
               </div>
               <Button variant="outline" className="px-6 bg-transparent">
                 <Filter className="h-4 w-4 mr-2" />
@@ -204,10 +193,10 @@ export default function MannequinsPage() {
           </div>
         </div>
       </section>
-
-      {/* Mannequins Femmes */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Grille de mannequins (femmes/hommes) */}
+      <section className="py-12 bg-gris text-noir">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Mannequins Femmes */}
           <div className="flex items-center space-x-3 mb-12">
             <div className="w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center">
               <Crown className="h-6 w-6 text-rose-600" />
@@ -295,12 +284,8 @@ export default function MannequinsPage() {
               );
             })}
           </div>
-        </div>
-      </section>
 
-      {/* Mannequins Hommes */}
-      <section className="py-24 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Mannequins Hommes */}
           <div className="flex items-center space-x-3 mb-12">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
               <Users className="h-6 w-6 text-blue-600" />
@@ -376,35 +361,18 @@ export default function MannequinsPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="py-24 bg-black text-white">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold mb-6">
-            Vous cherchez le talent <span className="text-amber-400">parfait</span> ?
-          </h2>
-          <p className="text-xl text-neutral-300 mb-8">
-            Contactez-nous pour discuter de vos besoins et trouver le mannequin idéal pour votre projet
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-4">
-                Réserver un Mannequin
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link href="/devenir-mannequin">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-black px-8 py-4 bg-transparent"
-              >
-                Devenir Mannequin
-              </Button>
-            </Link>
-          </div>
+      {/* CTA Devenir Mannequin */}
+      <section className="py-16 bg-or text-noir text-center">
+        <div className="max-w-2xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Vous souhaitez rejoindre l’agence ?</h2>
+          <p className="text-xl mb-8">Remplissez le formulaire pour tenter votre chance et devenir mannequin chez PMM.</p>
+          <Link href="/devenir-mannequin">
+            <button className="bg-noir text-or font-bold px-10 py-4 rounded-full text-xl shadow-lg hover:bg-or hover:text-noir hover:scale-105 hover:shadow-xl transition-all duration-200 border-2 border-noir focus:outline-none focus:ring-2 focus:ring-noir focus:ring-offset-2">
+              Devenir Mannequin
+            </button>
+          </Link>
         </div>
       </section>
-    </div>
-  )
+    </main>
+  );
 }

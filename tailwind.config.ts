@@ -12,7 +12,7 @@ const config: Config = {
   ],
   theme: {
   	fontSize: {
-  		base: '1.125rem', // 18px
+  		base: '1.375rem', // 22px
   	},
   	extend: {
   		colors: {

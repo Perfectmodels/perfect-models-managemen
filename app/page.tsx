@@ -1,143 +1,27 @@
-"use client";
-
-import Image from "next/image";
-import Link from "next/link";
+import Hero from '@/components/Hero';
+import ModelsSection from '@/components/ModelsSection';
+import ServicesSection from '@/components/ServicesSection';
+import PresentationSection from '@/components/PresentationSection';
+import EventsSection from '@/components/EventsSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
 
 export default function Home() {
   return (
-    <main>
-      {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex flex-col justify-center items-center bg-beige text-noir overflow-hidden">
-        <Image
-          src="/background (1).jpg"
-          alt="Hero"
-          fill
-          className="object-cover object-center opacity-40 pointer-events-none select-none"
-          priority
-        />
-        <div className="relative z-10 text-center py-32 px-4">
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-8 text-or drop-shadow-xl uppercase tracking-wide">
-            L'excellence a un visage
-          </h1>
-          <p className="mb-10 text-2xl md:text-3xl text-noir/80 font-serif italic max-w-2xl mx-auto">
-            L'élégance, la diversité et le professionnalisme au service de la mode et de la publicité.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/mannequins">
-              <button className="bg-or text-noir font-bold px-10 py-4 rounded-full text-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 border-2 border-or focus:outline-none focus:ring-2 focus:ring-or focus:ring-offset-2 cta-glow">
-                Découvrir nos Mannequins
-              </button>
-            </Link>
-            <Link href="/devenir-mannequin">
-              <button className="bg-noir text-or font-bold px-10 py-4 rounded-full text-xl shadow-lg hover:bg-or hover:text-noir hover:scale-105 hover:shadow-xl transition-all duration-200 border-2 border-or focus:outline-none focus:ring-2 focus:ring-or focus:ring-offset-2">
-                Devenir Mannequin
-              </button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Présentation en 2 colonnes */}
-      <section className="py-24 bg-blanc text-noir">
-        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-or">L'agence de référence au Gabon</h2>
-            <p className="text-xl text-noir/80 mb-8">
-              Perfect Models Management est une agence de mannequins et de talents spécialisée dans la mode, la publicité et l’événementiel. Nous révélons, formons et accompagnons les talents d’aujourd’hui et de demain.
-            </p>
-            <ul className="space-y-4 text-lg text-noir/70 mb-8">
-              <li>+50 mannequins sélectionnés pour leur professionnalisme, leur charisme et leur diversité.</li>
-              <li>Casting & Formation sur-mesure pour révéler le potentiel de chaque talent.</li>
-              <li>Organisation de défilés, shootings, campagnes et événements de prestige.</li>
-            </ul>
-          </div>
-          <div className="flex justify-center">
-            <Image src="/flora.jpg" alt="Directrice" width={350} height={350} className="rounded-2xl shadow-lg object-cover" />
-          </div>
-        </div>
-      </section>
-
-      {/* Services en grille */}
-      <section className="py-24 bg-beige text-noir">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-or text-center">Nos Services</h2>
-          <div className="grid md:grid-cols-3 gap-10">
-            <div className="bg-blanc rounded-2xl p-8 shadow-md flex flex-col items-center">
-              <Image src="/icons/service-mannequin.svg" alt="Mannequins" width={60} height={60} className="mb-4" />
-              <h3 className="text-xl font-bold mb-2 text-or">Mannequins & Talents</h3>
-              <p className="text-noir/70 text-center">Mise à disposition de mannequins professionnels pour vos projets mode, pub, événementiel.</p>
-            </div>
-            <div className="bg-blanc rounded-2xl p-8 shadow-md flex flex-col items-center">
-              <Image src="/icons/service-formation.svg" alt="Formation" width={60} height={60} className="mb-4" />
-              <h3 className="text-xl font-bold mb-2 text-or">Casting & Formation</h3>
-              <p className="text-noir/70 text-center">Organisation de castings, coaching, formation à la prise de parole, au défilé, à la photo.</p>
-            </div>
-            <div className="bg-blanc rounded-2xl p-8 shadow-md flex flex-col items-center">
-              <Image src="/icons/service-evenement.svg" alt="Événementiel" width={60} height={60} className="mb-4" />
-              <h3 className="text-xl font-bold mb-2 text-or">Événementiel</h3>
-              <p className="text-noir/70 text-center">Défilés, shootings, campagnes, organisation d’événements mode et corporate.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Témoignages en slider/cards */}
-      <section className="py-24 bg-gris text-noir">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-or">Ils nous font confiance</h2>
-          <div className="grid md:grid-cols-3 gap-10">
-            <div className="bg-blanc rounded-2xl p-8 shadow-md">
-              <p className="italic text-noir/80 mb-4">“Une équipe professionnelle, à l’écoute et passionnée. Merci pour l’accompagnement !”</p>
-              <div className="font-bold text-or">Mirabelle</div>
-              <div className="text-noir/60 text-sm">Miss Tourisme</div>
-            </div>
-            <div className="bg-blanc rounded-2xl p-8 shadow-md">
-              <p className="italic text-noir/80 mb-4">“Grâce à Perfect Models, j’ai pu défiler pour de grandes marques et progresser rapidement.”</p>
-              <div className="font-bold text-or">Pablo</div>
-              <div className="text-noir/60 text-sm">Mannequin Homme</div>
-            </div>
-            <div className="bg-blanc rounded-2xl p-8 shadow-md">
-              <p className="italic text-noir/80 mb-4">“Un vivier de talents et une vraie famille. Je recommande à 100 % !”</p>
-              <div className="font-bold text-or">Noemi Kim</div>
-              <div className="text-noir/60 text-sm">Mannequin Femme</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partenaires en bandeau */}
-      <section className="py-16 bg-blanc text-noir">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-or">Ils nous soutiennent</h2>
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            <Image src="/logo-pmm.png" alt="Logo PMM" width={80} height={80} className="opacity-80" />
-            <Image src="/Affiche.png" alt="Affiche" width={80} height={80} className="opacity-80" />
-            <Image src="/Brand'O.jpg" alt="Brand'O" width={80} height={80} className="opacity-80" />
-            <Image src="/La Gare Du Nord.jpg" alt="La Gare Du Nord" width={80} height={80} className="opacity-80" />
-            <Image src="/Sabo Fashion.jpg" alt="Sabo Fashion" width={80} height={80} className="opacity-80" />
-            {/* Ajoute d'autres logos partenaires ici */}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA final */}
-      <section className="py-16 bg-or text-noir text-center">
-        <div className="max-w-2xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Vous souhaitez collaborer avec nous ?</h2>
-          <p className="text-xl mb-8">Contactez-nous pour discuter de vos besoins ou découvrir nos talents.</p>
-          <Link href="/contact">
-            <button className="bg-noir text-or font-bold px-10 py-4 rounded-full text-xl shadow-lg hover:bg-or hover:text-noir hover:scale-105 hover:shadow-xl transition-all duration-200 border-2 border-noir focus:outline-none focus:ring-2 focus:ring-noir focus:ring-offset-2">
-              Contactez l'agence
-            </button>
-          </Link>
-        </div>
-      </section>
-      <style jsx global>{`
-        .cta-glow:hover {
-          background: linear-gradient(90deg, #D4AF37 0%, #f7d774 100%);
-          box-shadow: 0 0 16px 2px #D4AF3788;
-        }
-      `}</style>
-    </main>
+    <>
+      <Hero />
+      {/* Ici, chaque section (Présentation, Mannequins, Services, Événements, Témoignages, Formulaire, Footer) est restylée avec :
+      - overlays/dégradés de fond
+      - titres XXL avec effets
+      - cartes et encadrés magazine (ombres, coins arrondis, fond semi-transparent)
+      - boutons larges et animés
+      - séparateurs élégants
+      - palette premium (noir, blanc, or/ambre, bleu/vert accent)
+      - images immersives, citations, transitions */}
+      <PresentationSection />
+      <EventsSection />
+      <ModelsSection />
+      <ServicesSection />
+      <TestimonialsSection />
+    </>
   );
 }

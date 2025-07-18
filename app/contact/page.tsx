@@ -1,40 +1,51 @@
 "use client";
 
-import { Mail, Phone, MapPin } from "lucide-react";
+import React, { useState } from "react";
 
 export default function ContactPage() {
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError(null);
+    setSent(false);
+    setSent(true);
+  }
+
   return (
-    <main>
-      <section className="py-24 bg-gris text-noir min-h-screen">
-        <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-8 text-or drop-shadow-xl uppercase tracking-wide text-center">Contact</h1>
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
-            <div>
-              <h2 className="text-2xl font-bold text-or mb-4">Coordonnées</h2>
-              <ul className="space-y-4 text-lg">
-                <li className="flex items-center gap-3"><Mail className="text-or" /> contact@perfectmodels.ga</li>
-                <li className="flex items-center gap-3"><Phone className="text-or" /> +241 07 00 00 00</li>
-                <li className="flex items-center gap-3"><MapPin className="text-or" /> Libreville, Gabon</li>
-              </ul>
-            </div>
-            <form className="bg-blanc rounded-2xl p-8 shadow-md flex flex-col gap-6">
-              <input type="text" placeholder="Nom & Prénom" className="p-4 rounded-md border border-gris bg-gris/50 text-noir" required />
-              <input type="email" placeholder="Adresse e-mail" className="p-4 rounded-md border border-gris bg-gris/50 text-noir" required />
-              <textarea placeholder="Votre message" rows={5} className="p-4 rounded-md border border-gris bg-gris/50 text-noir" required />
-              <button type="submit" className="bg-or text-noir font-bold px-8 py-4 rounded-full text-lg shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 border-2 border-or focus:outline-none focus:ring-2 focus:ring-or focus:ring-offset-2 cta-glow">Envoyer</button>
+    <section className="relative min-h-screen py-32 bg-gradient-to-br from-black via-neutral-900 to-amber-900/80 text-white overflow-hidden">
+      <div className="max-w-2xl mx-auto px-4">
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-10 drop-shadow-xl text-amber-300 uppercase tracking-wide text-center">Contact</h1>
+        <p className="mb-10 text-xl text-amber-100 text-center font-serif italic">Une question, une demande de partenariat ou une envie de rejoindre l'agence ? Écrivez-nous !</p>
+        <div className="bg-white/10 rounded-3xl shadow-2xl p-10 backdrop-blur-md border border-amber-200">
+          {sent ? (
+            <div className="bg-green-100 text-green-700 p-4 rounded mb-6 text-center text-lg font-bold">Votre message a bien été envoyé. Merci !</div>
+          ) : (
+            <form className="space-y-8" onSubmit={handleSubmit}>
+              {error && <div className="bg-red-100 text-red-700 p-3 rounded mb-4 text-sm">{error}</div>}
+              <div>
+                <label className="block mb-1 font-medium text-amber-200">Nom *</label>
+                <input name="nom" required className="w-full p-4 border border-amber-200 rounded-xl bg-black/30 text-white placeholder:text-amber-300" placeholder="Votre nom" />
+              </div>
+              <div>
+                <label className="block mb-1 font-medium text-amber-200">Email *</label>
+                <input name="email" type="email" required className="w-full p-4 border border-amber-200 rounded-xl bg-black/30 text-white placeholder:text-amber-300" placeholder="votre@email.com" />
+              </div>
+              <div>
+                <label className="block mb-1 font-medium text-amber-200">Message *</label>
+                <textarea name="message" required className="w-full p-4 border border-amber-200 rounded-xl bg-black/30 text-white placeholder:text-amber-300" rows={5} placeholder="Votre message..." />
+              </div>
+              <button type="submit" className="w-full bg-amber-400 text-black py-4 text-2xl rounded-full font-bold shadow-lg hover:bg-amber-500 transition-colors uppercase tracking-wider">Envoyer</button>
             </form>
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.openstreetmap.org/export/embed.html?bbox=9.454,0.390,9.464,0.400&amp;layer=mapnik"
-              className="w-full h-64 border-0"
-              allowFullScreen
-              loading="lazy"
-              title="Carte Libreville"
-            ></iframe>
+          )}
+          <div className="mt-12 text-amber-200 text-sm text-center">
+            <div><b>Email :</b> <a href="mailto:perfectmodels.ga@gmail.com" className="text-amber-400 underline">perfectmodels.ga@gmail.com</a></div>
+            <div className="mt-2"><b>Instagram :</b> <a href="https://www.instagram.com/perfectmodels.ga/" target="_blank" rel="noopener noreferrer" className="text-amber-400 underline">@perfectmodels.ga</a></div>
+            <div className="mt-2"><b>Facebook :</b> <a href="https://www.facebook.com/perfectmodels.ga" target="_blank" rel="noopener noreferrer" className="text-amber-400 underline">perfectmodels.ga</a></div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }

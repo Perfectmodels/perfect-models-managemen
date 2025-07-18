@@ -5,10 +5,12 @@ import { useState } from "react";
 import Image from "next/image";
 import { Menu } from "lucide-react";
 
+const goldMat = "#C9B037";
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="sticky top-0 w-full bg-blanc/90 backdrop-blur border-b border-gris z-50 transition-all">
+    <nav className="sticky top-0 w-full bg-black/95 backdrop-blur border-b border-amber-900 z-50 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
         {/* Logo */}
         <Link href="/">
@@ -30,33 +32,34 @@ export default function Navbar() {
           <NavLink href="/perfect-fashion-day" label="Perfect Fashion Day" badge />
           <NavLink href="/contact" label="Contact" icon="mail" />
           <Link href="/devenir-mannequin">
-            <button className="ml-4 px-6 py-2 rounded-full font-bold bg-or text-noir shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 border-2 border-or focus:outline-none focus:ring-2 focus:ring-or focus:ring-offset-2 cta-glow">
+            <button className="ml-4 px-6 py-2 rounded-full font-bold" style={{ background: goldMat, color: '#222', border: `2px solid ${goldMat}` }}>
               Devenir Mannequin
             </button>
           </Link>
         </div>
         {/* Burger menu */}
         <button
-          className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-or"
+          className="md:hidden p-2 rounded focus:outline-none focus:ring-2"
+          style={{ color: goldMat, borderColor: goldMat }}
           onClick={() => setOpen((v) => !v)}
           aria-label="Ouvrir le menu"
         >
-          <Menu className="h-7 w-7 text-noir" />
+          <Menu className="h-7 w-7" />
         </button>
       </div>
       {/* Mobile drawer */}
       {open && (
-        <div className="fixed inset-0 z-50 bg-noir/60" onClick={() => setOpen(false)}>
+        <div className="fixed inset-0 z-50 bg-black/80" onClick={() => setOpen(false)}>
           <div
-            className="fixed top-0 right-0 w-72 h-full bg-blanc shadow-lg p-8 flex flex-col space-y-8 animate-slide-in"
+            className="fixed top-0 right-0 w-72 h-full bg-black shadow-lg p-8 flex flex-col space-y-8 animate-slide-in"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className="self-end mb-4 text-gris hover:text-noir text-2xl"
+              className="self-end mb-4 text-white hover:text-amber-300 text-2xl"
               onClick={() => setOpen(false)}
               aria-label="Fermer le menu"
             >
-              ✕
+              
             </button>
             <NavLink href="/" label="Accueil" mobile onClick={() => setOpen(false)} />
             <NavLink href="/agence" label="Notre Agence" dropdown mobile onClick={() => setOpen(false)} />
@@ -65,7 +68,7 @@ export default function Navbar() {
             <NavLink href="/perfect-fashion-day" label="Perfect Fashion Day" badge mobile onClick={() => setOpen(false)} />
             <NavLink href="/contact" label="Contact" icon="mail" mobile onClick={() => setOpen(false)} />
             <Link href="/devenir-mannequin" onClick={() => setOpen(false)}>
-              <button className="w-full mt-6 px-6 py-3 rounded-full font-bold bg-or text-noir shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-200 border-2 border-or focus:outline-none focus:ring-2 focus:ring-or focus:ring-offset-2 cta-glow">
+              <button className="w-full mt-6 px-6 py-3 rounded-full font-bold" style={{ background: goldMat, color: '#222', border: `2px solid ${goldMat}` }}>
                 Devenir Mannequin
               </button>
             </Link>
@@ -73,10 +76,6 @@ export default function Navbar() {
         </div>
       )}
       <style jsx global>{`
-        .cta-glow:hover {
-          background: linear-gradient(90deg, #D4AF37 0%, #f7d774 100%);
-          box-shadow: 0 0 16px 2px #D4AF3788;
-        }
         .nav-link {
           position: relative;
           transition: color 0.2s;
@@ -87,7 +86,7 @@ export default function Navbar() {
           position: absolute;
           left: 0; right: 0; bottom: -2px;
           height: 2px;
-          background: #D4AF37;
+          background: ${goldMat};
           transform: scaleX(0);
           transition: transform 0.3s;
         }
@@ -95,11 +94,11 @@ export default function Navbar() {
           transform: scaleX(1);
         }
         .nav-link:hover, .nav-link.active {
-          color: #D4AF37;
+          color: ${goldMat};
         }
         .badge-evt {
-          background: #D4AF37;
-          color: #fff;
+          background: ${goldMat};
+          color: #222;
           font-size: 0.7rem;
           border-radius: 8px;
           padding: 2px 8px;
@@ -116,8 +115,10 @@ export default function Navbar() {
 }
 
 function NavLink({ href, label, icon, badge, dropdown, filter, mobile, onClick }) {
+  const goldMat = "#C9B037";
   return (
-    <Link href={href} onClick={onClick} className={`nav-link flex items-center gap-1 font-semibold text-lg px-3 py-2 transition-colors ${mobile ? "text-noir" : "text-noir"}`}>
+    <Link href={href} onClick={onClick} className={`nav-link flex items-center gap-1 font-semibold text-lg px-3 py-2 transition-colors ${mobile ? "text-white" : "text-white"}`}
+      style={{ color: 'inherit' }}>
       {icon === "photo" && (
         <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
       )}

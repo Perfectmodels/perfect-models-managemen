@@ -5,23 +5,30 @@ import PresentationSection from '@/components/PresentationSection';
 import EventsSection from '@/components/EventsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 
+const goldMat = "#C9B037";
+
 export default function Home() {
   return (
-    <>
-      <Hero />
-      {/* Ici, chaque section (Présentation, Mannequins, Services, Événements, Témoignages, Formulaire, Footer) est restylée avec :
-      - overlays/dégradés de fond
-      - titres XXL avec effets
-      - cartes et encadrés magazine (ombres, coins arrondis, fond semi-transparent)
-      - boutons larges et animés
-      - séparateurs élégants
-      - palette premium (noir, blanc, or/ambre, bleu/vert accent)
-      - images immersives, citations, transitions */}
-      <PresentationSection />
-      <EventsSection />
-      <ModelsSection />
-      <ServicesSection />
-      <TestimonialsSection />
-    </>
+    <div className="bg-black min-h-screen">
+      <section className="py-10">
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-8 text-center uppercase tracking-wide" style={{ color: goldMat }}>Perfect Models Management</h1>
+        <Hero />
+      </section>
+      <section className="bg-black">
+        <PresentationSection />
+      </section>
+      <section className="bg-black">
+        <EventsSection />
+      </section>
+      <section className="bg-black">
+        <ModelsSection />
+      </section>
+      <section className="bg-black">
+        <ServicesSection />
+      </section>
+      <section className="bg-black">
+        <TestimonialsSection />
+      </section>
+    </div>
   );
 }

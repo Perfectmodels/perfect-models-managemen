@@ -5,6 +5,8 @@ import { ArrowRight, Calendar, MapPin, Users, Star, Camera, Film, Sparkles, Awar
 import Image from "next/image"
 import Link from "next/link"
 
+const goldMat = "#C9B037";
+
 export default function PerfectFashionDayPage() {
   const stylistes = [
     {
@@ -71,12 +73,12 @@ export default function PerfectFashionDayPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-black pt-20 text-white">
       {/* Hero Section */}
-      <section className="relative py-32 bg-gradient-to-br from-black via-neutral-900 to-amber-900/80 text-white overflow-hidden">
+      <section className="relative py-32 bg-black text-white overflow-hidden">
         <div className="max-w-5xl mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-10 drop-shadow-xl text-amber-300 uppercase tracking-wide text-center">Perfect Fashion Day</h1>
-          <p className="mb-10 text-xl text-amber-100 text-center font-serif italic">Retour sur un événement exceptionnel mêlant mode, art et culture gabonaise.</p>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-10 text-center uppercase tracking-wide" style={{ color: goldMat }}>Perfect Fashion Day</h1>
+          <p className="mb-10 text-xl text-white/80 text-center font-serif italic">Retour sur un événement exceptionnel mêlant mode, art et culture gabonaise.</p>
           {/* Moments forts, artistes, galerie photos, etc. en encadrés magazine */}
           {/* ...le reste du contenu existant, mais avec les classes magazine... */}
         </div>

@@ -5,6 +5,8 @@ import { ArrowRight, Sparkles, Film, Camera, Award } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
+const goldMat = "#C9B037";
+
 export default function PortfolioPage() {
   const fashionShows = [
     "Défilé Bye Bye Vacances par Alban Design",
@@ -55,49 +57,49 @@ export default function PortfolioPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-black pt-20 text-white">
       {/* Hero Section stylée */}
       <section className="relative py-32 bg-black text-white overflow-hidden">
         <Image src="/flora4.jpg" alt="Défilé" fill priority className="object-cover object-center opacity-30 absolute inset-0 z-0" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <Award className="mx-auto mb-6 h-16 w-16 text-amber-400 drop-shadow-lg" />
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg">Portfolio</h1>
-          <p className="text-2xl md:text-3xl font-semibold text-amber-200 mb-4">L’excellence sur tous les podiums</p>
-          <p className="text-lg md:text-xl text-neutral-100 max-w-2xl mx-auto mb-8">Depuis 2021, Perfect Models Management rayonne sur les plus grands événements de mode, clips et shootings en Afrique centrale.</p>
+          <Award className="mx-auto mb-6 h-16 w-16" style={{ color: goldMat }} />
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg" style={{ color: goldMat }}>Portfolio</h1>
+          <p className="text-2xl md:text-3xl font-semibold mb-4" style={{ color: goldMat }}>L’excellence sur tous les podiums</p>
+          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-8">Depuis 2021, Perfect Models Management rayonne sur les plus grands événements de mode, clips et shootings en Afrique centrale.</p>
         </div>
       </section>
 
       {/* Chiffres clés */}
-      <section className="py-16 bg-gradient-to-r from-amber-50 to-amber-100 border-b border-amber-200">
+      <section className="py-16 border-b border-amber-900/40 bg-black">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
-            <div className="text-5xl font-extrabold text-amber-600 mb-2">{fashionShows.length}+</div>
-            <div className="text-lg text-neutral-700 font-medium">Défilés de Mode</div>
+            <div className="text-5xl font-extrabold mb-2" style={{ color: goldMat }}>{fashionShows.length}+</div>
+            <div className="text-lg text-white/80 font-medium">Défilés de Mode</div>
           </div>
           <div>
-            <div className="text-5xl font-extrabold text-blue-600 mb-2">{videoClips.length}+</div>
-            <div className="text-lg text-neutral-700 font-medium">Clips & Films</div>
+            <div className="text-5xl font-extrabold mb-2" style={{ color: goldMat }}>{videoClips.length}+</div>
+            <div className="text-lg text-white/80 font-medium">Clips & Films</div>
           </div>
           <div>
-            <div className="text-5xl font-extrabold text-green-600 mb-2">{photoShoots.length}+</div>
-            <div className="text-lg text-neutral-700 font-medium">Shooting Photo</div>
+            <div className="text-5xl font-extrabold mb-2" style={{ color: goldMat }}>{photoShoots.length}+</div>
+            <div className="text-lg text-white/80 font-medium">Shooting Photo</div>
           </div>
         </div>
       </section>
 
       {/* Défilés de Mode */}
-      <section className="py-24">
+      <section className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-3 mb-12">
-            <Sparkles className="h-10 w-10 text-amber-500" />
-            <h2 className="text-4xl font-bold text-black">Défilés de Mode</h2>
+            <Sparkles className="h-10 w-10" style={{ color: goldMat }} />
+            <h2 className="text-4xl font-bold" style={{ color: goldMat }}>Défilés de Mode</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {fashionShows.map((show, index) => (
-              <Card key={index} className="p-8 border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group bg-amber-50/60">
+              <Card key={index} className="p-8 border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group bg-white/5">
                 <div className="flex items-center space-x-4 mb-2">
-                  <Award className="h-6 w-6 text-amber-500 flex-shrink-0" />
-                  <span className="text-lg font-semibold text-black group-hover:text-amber-700 transition-colors">{show}</span>
+                  <Award className="h-6 w-6" style={{ color: goldMat }} />
+                  <span className="text-lg font-semibold text-white group-hover:text-amber-300 transition-colors">{show}</span>
                 </div>
               </Card>
             ))}
@@ -106,21 +108,21 @@ export default function PortfolioPage() {
       </section>
 
       {/* Clips Vidéo & Cinéma */}
-      <section className="py-24 bg-neutral-50">
+      <section className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-3 mb-12">
-            <Film className="h-10 w-10 text-blue-500" />
-            <h2 className="text-4xl font-bold text-black">Clips Vidéo & Cinéma</h2>
+            <Film className="h-10 w-10" style={{ color: goldMat }} />
+            <h2 className="text-4xl font-bold" style={{ color: goldMat }}>Clips Vidéo & Cinéma</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {videoClips.map((clip, index) => (
               <Card
                 key={index}
-                className="group overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-300 bg-blue-50/60"
+                className="group overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-300 bg-white/5"
               >
                 <div className="flex items-center space-x-4 mb-2">
-                  <Film className="h-6 w-6 text-blue-500 flex-shrink-0" />
-                  <span className="text-lg font-semibold text-black group-hover:text-blue-700 transition-colors">{clip}</span>
+                  <Film className="h-6 w-6" style={{ color: goldMat }} />
+                  <span className="text-lg font-semibold text-white group-hover:text-amber-300 transition-colors">{clip}</span>
                 </div>
               </Card>
             ))}
@@ -129,21 +131,21 @@ export default function PortfolioPage() {
       </section>
 
       {/* Shooting Photo */}
-      <section className="py-24">
+      <section className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-3 mb-12">
-            <Camera className="h-10 w-10 text-green-600" />
-            <h2 className="text-4xl font-bold text-black">Shooting Photo</h2>
+            <Camera className="h-10 w-10" style={{ color: goldMat }} />
+            <h2 className="text-4xl font-bold" style={{ color: goldMat }}>Shooting Photo</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {photoShoots.map((shoot, index) => (
               <Card
                 key={index}
-                className="group overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-300 bg-green-50/60"
+                className="group overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-300 bg-white/5"
               >
                 <div className="flex items-center space-x-4 mb-2">
-                  <Camera className="h-6 w-6 text-green-600 flex-shrink-0" />
-                  <span className="text-lg font-semibold text-black group-hover:text-green-700 transition-colors">{shoot}</span>
+                  <Camera className="h-6 w-6" style={{ color: goldMat }} />
+                  <span className="text-lg font-semibold text-white group-hover:text-amber-300 transition-colors">{shoot}</span>
                 </div>
               </Card>
             ))}
@@ -152,10 +154,10 @@ export default function PortfolioPage() {
       </section>
 
       {/* Note importante */}
-      <section className="py-16 bg-gradient-to-r from-amber-50 to-amber-100 border-t border-amber-200">
+      <section className="py-16 border-t border-amber-900/40 bg-black">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <Badge className="mb-4 bg-amber-500 text-white border-0">Engagement Total</Badge>
-          <p className="text-xl text-amber-800 font-medium">
+          <Badge className="mb-4" style={{ background: goldMat, color: '#222', border: 'none' }}>Engagement Total</Badge>
+          <p className="text-xl font-medium" style={{ color: goldMat }}>
             Notre agence de mannequins a participé à tous les événements de mode depuis 2021, son année de création.
           </p>
         </div>
@@ -165,14 +167,14 @@ export default function PortfolioPage() {
       <section className="py-24 bg-black text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold mb-6">
-            Votre prochain projet avec <span className="text-amber-400">nous</span> ?
+            Votre prochain projet avec <span style={{ color: goldMat }}>nous</span> ?
           </h2>
-          <p className="text-xl text-neutral-300 mb-8">
+          <p className="text-xl text-white/80 mb-8">
             Découvrez comment Perfect Models Management peut apporter l'excellence à votre événement ou campagne
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-4">
+              <Button size="lg" style={{ background: goldMat, color: '#222' }} className="font-semibold px-8 py-4">
                 Collaborer avec Nous
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -181,7 +183,8 @@ export default function PortfolioPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-black px-8 py-4 bg-transparent"
+                style={{ borderColor: goldMat, color: goldMat }}
+                className="px-8 py-4 bg-transparent"
               >
                 Voir nos Mannequins
               </Button>

@@ -8,6 +8,8 @@ import { ArrowRight, Upload, CheckCircle, Star, Users } from "lucide-react"
 import Link from "next/link";
 import { useState } from "react";
 
+const goldMat = "#C9B037";
+
 export default function DevenirMannequinPage() {
   const requirements = [
     "Âge minimum : 16 ans",
@@ -77,11 +79,11 @@ export default function DevenirMannequinPage() {
 
   return (
     <>
-      <section className="relative min-h-screen py-32 bg-gradient-to-br from-black via-neutral-900 to-amber-900/80 text-white overflow-hidden">
+      <section className="relative min-h-screen py-24 bg-black text-white overflow-hidden">
         <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-10 drop-shadow-xl text-amber-300 uppercase tracking-wide text-center">Devenir Mannequin</h1>
-          <p className="mb-10 text-xl text-amber-100 text-center font-serif italic">Remplissez ce formulaire pour rejoindre l’agence Perfect Models Management. Les champs marqués d’une * sont obligatoires.</p>
-          <Card className="bg-white/10 rounded-3xl shadow-2xl p-10 backdrop-blur-md border border-amber-200">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-10 text-center uppercase tracking-wide" style={{ color: goldMat }}>Devenir Mannequin</h1>
+          <p className="mb-10 text-xl text-white/80 text-center font-serif italic">Remplissez ce formulaire pour rejoindre l’agence Perfect Models Management. Les champs marqués d’une * sont obligatoires.</p>
+          <Card className="bg-white/5 rounded-3xl shadow-2xl p-10 backdrop-blur-md border border-amber-200">
             {submitted ? (
               <div className="text-center py-16">
                 <h2 className="text-2xl font-bold text-amber-600 mb-4">Merci !</h2>
